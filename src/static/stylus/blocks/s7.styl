@@ -1,0 +1,132 @@
+.b7
+	font-size 0
+	
+.b7-wrapper-contenedor
+	box-sizing border-box
+	// display flex
+	// background #f0f0f0
+	background rgba(#ccc,0.4)
+	margin-top 45px
+	// margin-bottom 50px
+
+.b7-figure
+	margin auto
+	position relative
+	top -20px
+	img
+		max-width 100%
+		border 4px solid c-0
+		box-sizing border-box
+		height 124px
+		display block
+		padding 20px 25px
+		background-color white
+.b7-wrapper-text
+	text-align center
+	margin-top 0px
+	
+.b7-titu
+	&:nth-of-type(1)
+		padding-bottom 59px
+	&:nth-of-type(2)
+		padding-bottom 61px
+	h3
+		margin 0
+		font-family t-1
+		font-size 36px
+		line-height 1.3
+		display block
+		text-transform uppercase
+		margin-bottom 4px
+	span
+		font-family t-3
+		font-size 18px
+		line-height 1.5
+		
+	&.orange
+		h3,span
+			color c-0
+	&.black
+		h3,span
+			color c-1
+		h3
+			font-size 24px
+			text-transform capitalize
+		span 
+			margin-bottom -3px
+.b7Miga
+	padding 10px 0
+	a
+		display inline-block
+		vertical-align top
+		color #707070
+		font-family t-3
+		font-size 12px
+		position relative
+		line-height 1.5
+		vertical-align top
+		padding 0 11px
+		transition-all()
+		&:before
+			content "\e606"
+			display inline-block
+			font-family icomoon
+			color #707070
+			font-size 18px
+			position absolute
+			top 0
+			line-height 20px
+			left -7px
+			transition-all()
+		&.active
+			color #808080
+			text-transform uppercase
+			font-weight bolder
+			&:before
+				color c-4
+		@media screen and (min-width 1025px)
+			&.active
+				color #001335
+				text-transform uppercase
+			
+		&:first-child
+			padding-left 0
+			&:before
+				display none
+		&:last-child
+			padding-right 0
+@media screen and (max-width 1024px)
+	.b7Miga 
+		display none
+	.b7-wrapper-contenedor
+		margin-top 65px
+@media screen and (max-width 960px)
+	.b7-wrapper-contenedor
+		margin-bottom 20px
+
+@media screen and (max-width 768px)
+	.b7-titu
+		h3
+			font-size 28px
+	.b7-wrapper-contenedor
+		margin-bottom 10px
+@media screen and (max-width 480px)
+	.b7-titu
+		padding-bottom 40px
+		h3
+			font-size 18px
+		span
+			font-size 15px
+		&.black
+			h3
+				font-size 18px
+		&:nth-of-type(1)
+			padding-bottom 30px
+		&:nth-of-type(2)
+			padding-bottom 30px
+	.b7Miga
+		a
+			font-size 12px
+			line-height 1.8
+	.b7-wrapper-contenedor
+		margin-top 50px

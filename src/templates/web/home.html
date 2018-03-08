@@ -1,0 +1,155 @@
+{% extends "common/_base.html" %}
+{% load static %}
+{% block cssadicional %}
+<link rel="stylesheet" href="{% static '' %}css/jquery.bxslider.css">
+{% endblock %}
+
+{% block classbody %}{% endblock %}
+
+{% block content %}
+<!-- BLOQUE 1 -->
+<section class="b1">
+	<ul class="b1_block_banner">
+		{% for row in banners %}
+		<li class="b1-wrapper-contenedor" style="background-image: url({{row.imagen.url}});">
+			<div class="wancho">
+				<div class="b1-texto">
+					<h3>
+						{{row.texto}}
+					</h3>
+					{% if row.enlace_boton %}
+					   <div class="g0-btn naranja">
+						 <a href="{{row.enlace_boton}}">{{row.texto_boton}}<i class=" icon-flecha-btn"></i></a>
+					   </div>
+					{% endif %}
+				</div>
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+</section>
+
+<!-- BLOQUE 2 -->
+<section class="b2 b2-home">
+		<div class="b2-titulo">
+			<h1 class="g3-titulo">{{home.titulo_servicios}}</h1>
+		</div>
+		<div class="b2-wraper">
+			{% for row in abc %}
+			<a href="servicios-detalle.html" class="b2-item-servicios">
+				<div class="g1-block">
+				   <figure class="g1-imgprincipal">
+					 <img class="lazy" src="{% static '' %}media/img1.png" alt="" width="51" height="51">
+				   </figure>
+				 <figure class="g1-imghover">
+					 <img class="lazy" src="{% static '' %}media/imgblanco.png" alt="" width="70" height="70">
+				   </figure>
+				 <h3>PROYECTOS Y EJECUCIÓN DE EDIFICACIONES Y OBRAS INDUSTRIALES</h3>
+				 <div class="g1-linkdetalle">
+				   <h6>Ver Detalle</h6>
+				 </div>
+				</div>
+			</a>
+			{% endfor %}
+		</div>
+</section>
+
+<!-- BLOQUE 3 -->
+<section class="b3">
+	<div class="wancho">
+		<div class="b3-wrapper-contenido">
+			<div class="b3-medium">
+				<div class="b3-titu">
+					<h3>{{home.titulo_somos}}</h3>
+					{{home.texto_somos|safe}}
+				   	<div class="g0-btn azul">
+				  		<a href="{{home.btn_enlace}}">{{home.boton_servicios}}<i class=" icon-flecha-btn"></i></a>
+				   	</div>
+				</div>
+			</div>
+			<div class="b3-medium">
+				<figure class="b3-figure">
+					<img class="lazy" src="{{home.img_somos.url}}" alt="" width="585" height="410">
+				</figure>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- BLOQUE 4 -->
+<section class="b4">
+	<div class="wancho">
+		<h3 class="g3-titulo">{{home.titulo_clientes}}</h3>
+		<div class="b4-bloque-slider">
+			<ul class="bxslider b4-carrusel">
+				{% for row in clientes %}
+					<a href="{{row.get_absolute_url}}" class="b4-item">
+						<img class="lazy" src="{{row.imagen.url}}" width="172" height="125"/>
+					</a>
+				{% endfor %}
+				{% comment %}
+				{% for row in abc %}
+					<a href="clientes-detalle.html" class="b4-item">
+						<img class="lazy" src="{% static '' %}media/b4img{{loop.index}}.jpg" width="172" height="125"/>
+					</a>
+				{% endfor %}
+
+				{% endcomment %}
+			</ul>
+		</div>
+		<div class="b4-link">
+		   <div class="g0-btn naranja">
+			 <a href="{% url 'web:clientes' %}">{{home.boton_clientes}}<i class=" icon-flecha-btn"></i></a>
+		   </div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+
+{% block jsfinal %}
+<script type="text/javascript">
+// replace src by loadingImg
+var lazy = document.getElementsByClassName('lazy');
+var dataimg = [];
+for(var i=0; i<lazy.length; i++){
+	var img = lazy[i].getAttribute('src');
+	dataimg.push(img);
+	lazy[i].src = '../static/img/loading.svg';
+}
+// change imgloading by imgOrigin
+window.addEventListener('load',
+function() {
+	for(var i=0; i<lazy.length; i++){
+		lazy[i].src = dataimg[i];
+	}
+}, false);
+</script>
+<script type="text/javascript" src="{% static '' %}js/jquery.bxslider.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//B1
+		$('.b1_block_banner').bxSlider({
+			nextSelector: '#slider-next',
+			prevSelector: '#slider-prev',
+			nextText: '',
+			prevText: '',
+			pager:true,
+			mode :'fade',
+			auto:false ,
+
+		});
+
+		//B4
+		var itemcount=$(".b4-item").length;
+			$('.b4-carrusel').bxSlider({
+			  infiniteLoop: true,
+			  minSlides: 3,
+			  maxSlides: 6,
+			  slideWidth: 172,
+			  slideMargin: 28,
+			  ticker: true,
+			  speed: itemcount + '000'
+			});
+	});
+</script>
+{% endblock %}

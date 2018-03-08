@@ -1,0 +1,137 @@
+{% extends "../common/_base2.html" %}
+
+{% block cssadicional %}
+<link rel="stylesheet" href="{{STATIC_URL}}js/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="{{STATIC_URL}}css/jquery.bxslider.css">
+{%endblock %}
+
+{% block classbody %}{% endblock %}
+
+{% block content %}
+
+<!-- BLOQUE 14 -->
+<section class="b14">
+	<div class="wancho">
+		<div class="b14-imagen">
+			<ul class="b14-slider">
+			{% for row in "4"|get_range %}
+				<li class="b14-item" id="tab{{loop.index}}">
+					<figuere >
+						<img src="{{STATIC_URL}}media/b14-imagen.jpg" alt="" width="498" height="326">
+					</figuere>
+				</li>
+			{% endfor %}
+			</ul>
+			<ul class="b14-owl">
+			{% for row in "4"|get_range %}
+				<li class="b14-panel" data-id="tab{{loop.index}}">
+					<img src="{{STATIC_URL}}media/b14-tab.jpg" alt="" width="119" height="77">
+				</li>
+			{% endfor %}
+			</ul>
+		</div>
+		<div class="b14-inf">
+			<div class="b14-interna-informacion">
+				<span class="b14-close close-general"></span>
+				<div class="b14-sandv">
+					<img src="{{STATIC_URL}}media/b14-logo.png" alt="">
+				</div>
+
+				<div class="b14-title">
+					<h3>Título de la obra UPN Caja Ascensor</h3>
+				</div>
+
+				<div class="b14-texto">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ut dolore magna aliqua. Ut enim ad miut aliquip ex ea commodo cbeatae vitae dicta sunt explicabo.
+					Ut enim ad miut commodo cbeatae vitae dicta sunt explicabo.</p>
+				</div>
+				<ul class="b14-obras">
+					<li class="b14-itm">
+						<i class="icon-15 b14-icon"></i>
+						<div class="b14-span">
+							<span>Ubicación</span>
+							<em>Cieneguilla - Ica</em>
+						</div>
+					</li>
+					<li class="b14-itm">
+						<i class="icon-32  b14-icon"></i>
+						<div class="b14-span">
+							<span>Área construída</span>
+							<em>Cieneguilla - Ica</em>
+						</div>
+					</li>
+					<li class="b14-itm">
+						<i class="icon-11 b14-icon"></i>
+						<div class="b14-span">
+							<span>Tiempo de Obra</span>
+							<em>Cieneguilla - Ica</em>
+						</div>
+					</li>
+					<li class="b14-itm">
+						<i class="icon-12 b14-icon"></i>
+						<div class="b14-span">
+							<span>Tonelaje de obra</span>
+							<em>Cieneguilla - Ica</em>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
+{% block jsfinal %}
+<script type="text/javascript" src="{{STATIC_URL}}js/owl-carousel/owl.carousel.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/jquery.bxslider.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var b14panelcarrusel= $('.b14-panel').length;
+
+			if (b14panelcarrusel > 3) {
+				$('.b14-owl').addClass('owl-carousel');
+
+
+				$('.owl-carousel').owlCarousel({
+					loop:true,
+					margin:10,
+					nav:false,
+					autoplay:false,
+					responsive:{
+						0:{
+							items:2
+						},
+						400:{
+							items:3
+						},
+						768:{
+							items:4
+						},
+						1020:{
+							items:4
+						}
+					}
+
+				});
+			}
+
+		$('.b14-slider').bxSlider({
+			mode:'fade',
+			auto: false,
+			nextText:'',
+			prevText:'',
+			pager: false,
+		});
+
+		$('.b14-panel').click(function(){
+			$('.b14-panel').removeClass('active');
+			$(this).addClass('active');
+
+			var dataId = $(this).attr('data-id');
+
+			$('.b14-item').removeClass('active');
+			$('.b14-item[id="'+dataId+'"]').addClass('active');
+		})
+	});
+</script>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% load static %}
+<header class="header">
+    <div class="wancho header-ctn">
+        <div class="header-logo">
+            <a href="{% url 'web:home' %}">
+                <img src="{% static '' %}img/158x46-2x.png" alt="" width="158" height="46">
+            </a>            
+        </div>
+
+        <nav class="menu">
+            <div class="menu-wrap">
+                <ul class="menu-list"> <!-- "menu-list" es usado para el menu responsive -->
+                    <li class="menu-item"><a href="{% url 'web:somos' %}" class="menu-link {% if tab == 'SO' %}active{% endif %}">Somos</a></li>
+                    <li class="menu-item"><a href="{% url 'web:servicios' %}" class="menu-link {% if tab == 'SE' %}active{% endif %}">Servicios</a></li>
+                    <li class="menu-item"><a href="{% url 'web:clientes' %}" class="menu-link {% if tab == 'CLI' %}active{% endif %}">Clientes</a></li>
+                    <li class="menu-item"><a href="{% url 'web:testimonios' %}" class="menu-link {% if tab == 'TES' %}active{% endif %}">Testimonios</a></li>
+                    <li class="menu-item"><a href="{% url 'web:contacto' %}" class="menu-link {% if tab == 'CO' %}active{% endif %}">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+</header>

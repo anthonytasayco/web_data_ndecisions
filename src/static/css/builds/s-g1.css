@@ -1,0 +1,193 @@
+.cf {
+  zoom: 1;
+}
+.cf:after,
+.cf:before {
+  content: "";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+.g1-block {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -o-box-lines: multiple;
+  -webkit-flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid #fbe4cc;
+  cursor: pointer;
+  -webkit-transition: all 400ms ease;
+  -moz-transition: all 400ms ease;
+  -o-transition: all 400ms ease;
+  -ms-transition: all 400ms ease;
+  transition: all 400ms ease;
+  height: 205px;
+  overflow: hidden;
+  position: relative;
+}
+.g1-block h3 {
+  font-size: 15px;
+  font-family: 'Conv_Lato-Regular', sans-serif;
+  color: #001b36;
+  margin-bottom: 15px;
+  max-width: 225px;
+  margin: 0;
+  line-height: 1.2;
+}
+.g1-block figure img {
+  max-width: 100%;
+  height: auto;
+}
+@media screen and (min-width: 1025px) {
+  .g1-block:hover {
+    background: #001b36;
+    -webkit-transition: all 400ms ease;
+    -moz-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    -ms-transition: all 400ms ease;
+    transition: all 400ms ease;
+    border: 1px solid rgba(239,122,18,0);
+    border-bottom: 1px solid #ef7a12;
+  }
+  .g1-block:hover h3 {
+    color: #fff;
+  }
+  .g1-block:hover .g1-linkdetalle {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -o-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    visibility: visible;
+    -webkit-transition: all 400ms ease;
+    -moz-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    -ms-transition: all 400ms ease;
+    transition: all 400ms ease;
+  }
+  .g1-block:hover .g1-imghover {
+    display: block;
+    margin: 0;
+    margin-top: -43px;
+  }
+  .g1-block:hover .g1-imgprincipal {
+    display: none;
+  }
+}
+.g1-imgprincipal {
+  margin: 0;
+}
+.g1-linkdetalle {
+  margin-top: 52px;
+  background: #ef7a12;
+  width: 100%;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  visibility: hidden;
+  -webkit-transform: translateY(102%);
+  -moz-transform: translateY(102%);
+  -o-transform: translateY(102%);
+  -ms-transform: translateY(102%);
+  transform: translateY(102%);
+  -webkit-transition: all 400ms ease;
+  -moz-transition: all 400ms ease;
+  -o-transition: all 400ms ease;
+  -ms-transition: all 400ms ease;
+  transition: all 400ms ease;
+  padding: 4.5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.g1-linkdetalle h6 {
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Conv_Lato-Regular', sans-serif;
+  display: block;
+  text-transform: uppercase;
+  position: relative;
+}
+.g1-linkdetalle h6:after {
+  content: '\e606';
+  font-family: 'icomoon';
+  font-size: 18px;
+  background: #fff;
+  border-radius: 50%;
+  position: relative;
+  top: 0px;
+  left: 13px;
+  font-weight: bold;
+  color: #ef7a12;
+}
+.g1-imghover {
+  display: none;
+  position: relative;
+}
+@media screen and (max-width: 1024px) {
+  .g1-block {
+    border-bottom: 0px;
+    background: #fff;
+    border: 1px solid #fbe4cc;
+  }
+  .g1-block .g1-imghover {
+    display: none;
+  }
+  .g1-block .g1-imgprincipal {
+    display: block;
+  }
+  .g1-block h3 {
+    color: #001b36;
+  }
+  .g1-linkdetalle {
+    margin-bottom: 20px;
+    background: #fff;
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    visibility: visible;
+    -webkit-transform: translateY(7%);
+    -moz-transform: translateY(7%);
+    -o-transform: translateY(7%);
+    -ms-transform: translateY(7%);
+    transform: translateY(7%);
+  }
+  .g1-linkdetalle a {
+    color: #ef7a12;
+  }
+  .g1-linkdetalle a:after {
+    color: #fff;
+    background: #ef7a12;
+  }
+}
+@media screen and (max-width: 768px) {
+  .g1-block h3 {
+    font-size: 14px;
+  }
+}

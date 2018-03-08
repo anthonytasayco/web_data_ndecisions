@@ -1,0 +1,93 @@
+{% extends "../common/_base2.html" %}
+
+{% block cssadicional %}
+<link rel="stylesheet" href="{{STATIC_URL}}js/owl-carousel/owl.carousel.css">
+
+{%endblock %}
+
+{% block classbody %}{% endblock %}
+
+{% block content %}
+
+<!-- BLOQUE 12 -->
+
+<section class="b12-certificaciones">
+	<div class="wancho">
+		<h2 class="g-general-title text-center">Nuestras <span>Certificaciones</span></h2>
+		<!--OWL CARRUSEL-->
+		<div class="b12-carrusel-certificaciones owl-theme">
+
+		  <div class="item-certificaciones">
+			<div class="img-certificacion">
+		  		<img src="{{STATIC_URL}}img/b12cer1.png" />
+			</div>
+		  </div>
+		  <div class="item-certificaciones">
+		  	<div class="img-certificacion">
+		  		<img src="{{STATIC_URL}}img/b12cer2.png" />
+			</div>
+		  </div>
+		  <div class="item-certificaciones">
+		  	<div class="img-certificacion">
+		  		<img src="{{STATIC_URL}}img/b12cer3.png" />
+			</div>
+		  </div>
+		  <div class="item-certificaciones">
+		  	<div class="img-certificacion">
+		  		<img src="{{STATIC_URL}}img/b12cer4.png" />
+			</div>
+		  </div>
+		  <div class="item-certificaciones">
+		  	<div class="img-certificacion">
+		  		<img src="{{STATIC_URL}}img/b12cer5.png" />
+			</div>
+		  </div>
+		  <div class="item-certificaciones">
+		  	<div class="img-certificacion">
+		  		<img src="{{STATIC_URL}}img/b12cer6.png" />
+			</div>
+		  </div>
+
+
+
+		</div>
+	</div>
+</section>
+
+
+{% endblock %}
+{% block jsfinal %}
+
+
+<script type="text/javascript" src="{{STATIC_URL}}js/owl-carousel/owl.carousel.js"></script>
+
+<script type="text/javascript">
+	var b12itemcarrusel= $('.item-certificaciones').length;
+
+			if (b12itemcarrusel > 6) {
+				$('.b12-carrusel-certificaciones').addClass('owl-carousel');
+				$('.owl-carousel').owlCarousel({
+					loop:true,
+					margin:30,
+					nav:true,
+					autoplay:true,
+					responsive:{
+						0:{
+							items:1
+						},
+						400:{
+							items:3
+						},
+						768:{
+							items:5
+						},
+						1020:{
+							items:6
+						}
+					}
+
+				});
+			}
+</script>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% load static core_tags%}
+<footer class="footer">
+    <div class="wancho">
+        <ul class="footer-wrapper">
+            <li class="footer-list">
+                <figure class="f-figure">
+                    <img src="{% static '' %}img/120x35-2x.png" alt="" width="120" height="35">
+                </figure>
+            </li>
+
+            <li class="footer-list">
+                <i class="icon-mail-black-envelope-symbol"></i>
+                <p>
+                    {% for c in correos %}
+                        <a href="mailto:{{c.email}}">{{c.email}}</a>
+                    {% endfor %}
+                </p>
+            </li>
+
+            <li class="footer-list f-tel">
+                <i class="icon-phone-receiver"></i>
+                <p>
+                    {% for t in telefonos %}
+                        <a href="tel:{{t.telefono|tel}}">{{t.telefono}}</a>{% if not forloop.last %}/{% endif %} 
+
+                    {% endfor %}
+                </p>
+            </li>
+
+            <li class="footer-list f-redes">
+            {% if info.facebook %}
+                <a href="{{info.faceboook}}" target="_blank" class="face"><i class="icon-facebook-with-circle"></i></a>
+            {% endif %}
+            {% if info.twitter %}
+                <a href="{{info.twitter}}" target="_blank" class="twi"><i class="icon-twitter-with-circle"></i></a>
+            {% endif %}
+            </li>
+            
+        </ul>
+    </div>
+
+    <!-- creditos -->
+    <section class="footer-copy">
+        <div class="wancho">
+            <div class="footer-copy-left">
+                <p>ingeres Todos los derechos reservados. </p>
+            </div>
+            <div class="footer-copy-right">
+                <a class="link-staff" target="_blank" href="http://www.staffcreativa.pe/">Diseño y desarrollo staffcreativa</a>
+            </div>
+        </div>
+    </section>
+</footer>

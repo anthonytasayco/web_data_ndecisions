@@ -1,0 +1,78 @@
+{% extends "common/_base.html" %}
+
+{% block cssadicional %}
+{% endblock %}
+
+{% block classbody %}{% endblock %}
+
+{% block content %}
+<!-- g-banner -->
+<div class="block-banner" style="background-image: url({{banner.fondo.url}});">
+	<div class="wancho"> 	
+		<h1>{{banner.titulo}}</h1>		
+	</div>
+</div>
+
+
+<!-- BLOQUE 6 -->
+<section class="b6">
+	<div class="wancho">
+		<div class="b6-texto">
+			{{seccion.texto|safe}}
+		</div>	
+	</div>
+	<div class="b6-clientes">
+		<ul class="b6-bloques">
+			{% for row in clientes %}
+				<li class="b6-cliente-item">
+					<a href="{{row.get_absolute_url}}">
+						<figure class="b6-figure">
+							<img src="{{row.imagen.url}}" />					
+						</figure>
+						<div class="b4-link-detalle">
+						   <span href="#">{{row.texto_hover}}<i class=" icon-arrow-right"></i></span>
+						</div>
+					</a>
+				</li>
+			{% endfor %}
+			{% comment %}
+				
+			{% for row in "6"|get_range %}
+				<li class="b6-cliente-item">
+					<a href="clientes-detalle.html">
+						<figure class="b6-img-normal">
+							<img src="{{ STATIC_URL }}media/172x125-11.png" />
+						</figure>
+						<div class="b4-link-detalle">
+						   <span href="#">MIRA LO QUE HICIMOS <i class=" icon-arrow-right"></i></span>
+						</div>
+					</a>
+				</li>
+			{% endfor %}
+			{% endcomment %}
+
+		</ul>	
+
+
+	</div>
+	{% if cantidad > clientes_POR_PAGINA %}
+	<div class="b13-paginador">
+		{% for p in paginator.page_range %}
+			<div class="b13-page {% if p == pag %}active{% endif %}">
+				<a href="?p={{p}}">{{p}}</a>
+			</div>
+		{% endfor %}
+	</div>
+	{%endif%}
+	<div class="b6-link">
+		<div class="wancho">
+		   <div class="g0-btn naranja">
+			 <a href="{{seccion.enlace}}">{{seccion.boton}}<i class="icon-flecha-btn"></i></a>
+		   </div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+
+{% block jsfinal %}
+{% endblock %}

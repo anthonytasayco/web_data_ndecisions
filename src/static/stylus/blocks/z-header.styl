@@ -1,0 +1,201 @@
+.header
+	width 100%
+	// height 50px
+	display block
+	position fixed 
+	left 0
+	top 0
+	background-color c-5
+	z-index 100
+	// background-color red
+	box-shadow 0px 2px 30px 2px rgba(0, 0, 0, 0.15)
+	.header-logo
+		text-align center
+		display block
+		img
+			display block
+	.menu
+		text-align center
+	.menu-item
+		display inline-block
+	.menu-link
+		// display inline-block
+		font-size 13.95px
+		font-family t-3
+		color c-4	
+		text-transform: uppercase;	
+		margin-left 27.5px
+		margin-right 27.5px  
+		position relative 
+		// transition-all()
+		&:before
+			content ""
+			background-image: url("../img/50x1-2x.png");
+			position: absolute;
+			bottom: 0px;
+			width: 0px;
+			height: 1px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: contain;
+			left: 0px;
+			right: 0px;
+			top 120%
+			margin: auto;
+			transition all 0.25s
+							
+		&:hover
+			&:before
+				width 50px	
+		&.active
+			&:before
+				content ""
+				background-image: url("../img/50x1-2x.png");
+				position: absolute;
+				bottom: 0px;
+				width: 50px;
+				height: 1px;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: contain;
+				left: 0px;
+				right: 0px;
+				top 125%
+				margin: auto;
+		// &.active, &:hover
+				
+				
+	.wancho
+		display flex
+		justify-content: space-between;
+		height 72px
+		align-items: center;
+		
+	.menu-list
+		font-size 0px	
+		.menu-item
+			&:last-child
+				.menu-link
+					margin-right 0
+// Menu responsive
+.icon-menu
+	&::before
+		color #000000
+		font-weight bold
+.responsive-logo
+	margin-top 10px
+	// width 80%
+	width 100%
+	display block
+	img
+		display block
+		max-width 100%
+		height auto
+		margin 0 auto
+
+.menu-overlay
+	position fixed
+	top 0
+	left 0
+	background-color black
+	z-index -1
+	width 100%
+	height 100%
+	opacity 0
+	cursor pointer
+	transition all 0.45s ease
+	&.active
+		z-index 1000
+		opacity 0.8
+.menu-mobile-close, .menu-mobile-open
+	// background-color c-1
+	// border-radius 7%
+	color white
+	cursor pointer
+	font-size 28px
+	// height 42px
+	// line-height 42px
+	position fixed
+	right 15px
+	text-align center
+	top 24px
+	transition all 0.45s ease
+	// width 42px
+	transform rotate(0deg)
+	background-color rgba(0, 0, 0, 0)
+.menu-mobile-open
+	opacity 1
+	visibility hidden
+	z-index 1002
+	&.scrolling
+		opacity 0.6
+	&:hover
+		opacity 1
+	&.active
+		visibility hidden
+		opacity 0
+		right 220px
+		z-index 1000
+		transform rotate(-90deg)
+		
+.menu-mobile-close
+	visibility hidden
+	opacity 0
+	z-index 1000
+	// background white
+	color c-first
+	&.active
+		visibility visible
+		opacity 1
+		right 205px
+		z-index 1002
+		transform rotate(-90deg)
+		ground-color rgba(0, 0, 0, 0)
+.menu-sidebar
+	width 200px
+	height 100%
+	overflow auto
+	position fixed
+	top 0
+	right -200px
+	background white
+	z-index 1000
+	transition right 0.45s ease
+	&.active
+		right 0
+.menu-responsive
+	padding-top 10px
+	.menu-item
+		height 48px
+		line-height 48px
+		font-size 16px
+		a
+			display block
+			text-indent 20px
+			&:hover, &.active
+				background-color c-1
+				color white
+
+.cnt-wrapper,.footer
+	position relative
+	left 0
+	transition left 0.45s ease
+	&.active
+		left -200px
+.wrapper
+	overflow hidden
+	margin-top 72px
+body
+	-webkit-font-smoothing antialiased
+	&.active
+		overflow hidden
+
+@media screen and (max-width:1018px)
+	.menu
+		display none
+	.menu-mobile-open
+		visibility visible
+@media screen and (max-width 375px)
+	.header 
+		.wancho
+			max-width 95%

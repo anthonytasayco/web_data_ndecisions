@@ -1,0 +1,213 @@
+.footer
+	box-shadow 0px 2px 30px 2px rgba(0, 0, 0, 0.15)
+.footer-wrapper
+	display table-cell
+	height 100px
+	box-sizing border-box
+	align-items center
+	display flex
+	// flex-flow row
+	// flex-direction row
+	// align-content stretch
+	justify-content flex-start
+	// justify-content center
+	position relative
+	
+.footer-list
+	// width 54%
+	width 50%
+	max-width 585px
+	position relative
+	p
+		margin 0
+		color c-1
+		font-family t-3
+		padding-left 25px
+		position relative
+	a
+		font-size 16px
+		color c-1
+	i
+		font-size 17px
+		position absolute
+		line-height 20px
+		left auto
+		top auto
+		line-height 20px
+	img
+		max-width 100%
+		height auto
+		display inline-block
+	&:before
+		content ''
+		position absolute
+		background rgba(c-0, 0.5)
+		top 0
+		bottom 0
+		right 24px
+		width 1px
+		height 100%
+	&:first-child, &:nth-child(4)
+		&:before
+			content none
+	&.f-tel
+		p
+			color c-1
+			font-family t-3
+			a
+				&:last-child
+					padding-left 0
+	&.f-redes
+		i
+			font-size 26px
+			color c-1
+			position relative
+			padding 0 3px
+			&:last-child
+				padding 0
+		a
+			padding-left 0
+		.face
+			i
+				&:hover
+					color  c-2
+		.twi
+			i
+				&:hover
+					color  c-3
+	&:first-child
+		margin 0
+	&:nth-child(2), &:nth-child(3)
+		box-sizing border-box
+		// width 20%
+		max-width 234px
+	&:last-child
+		box-sizing border-box
+		max-width 60px
+
+// creditos
+.footer-copy
+	overflow hidden
+	font-size 13px
+	background c-8
+	border-bottom 2px solid c-0
+	height 32px
+	.wancho
+		overflow hidden
+		margin-top 9px
+.footer-copy-left
+	float left
+	p
+		margin 0
+		text-transform uppercase
+		font-family t-3
+		font-size 11px
+		color #fff
+.footer-copy-right
+	float right
+	a
+		color #fff
+		font-size 11px
+		font-family t-3
+.staffcreativa
+	position relative
+	padding-right 0.45em
+	transition-all()
+	font-family 'arial'
+	&:after
+		content '\e60e'
+		font-family icomoon
+		font-size 0.7em
+		font-style normal
+		font-variant normal
+		font-weight normal
+		line-height 1
+		position absolute
+		right 0
+		speak none
+		text-transform none
+		top 0.1em
+.link-staff
+	&:hover .staffcreativa
+		color #000
+			
+@media screen and (max-width 768px)
+	.footer-list
+		width auto
+		&:before
+			right -25px
+		&.f-redes
+			i
+				font-size 35px
+		&:last-child
+			max-width 80px
+
+@media screen and (max-width 660px)
+	.footer-wrapper
+		display block
+		height auto
+	.footer-list
+		padding 24px 0
+		position relative
+		img
+			display block
+		&:before
+			content ''
+			position absolute
+			bottom 0
+			left 0
+			right 0
+			background rgba(c-0, 0.4)
+			width 100%
+			height 1px
+		&.f-redes
+			width 90%
+			padding 0
+			padding-top 12px
+			margin auto
+			bottom -7px
+			text-align center
+			max-width 100%
+			i
+				color c-0
+			&:before
+				content none
+		&:nth-child(2), &:nth-child(3)
+			max-width 100%
+			margin auto
+			text-align center
+			
+	.footer-copy
+		padding 15px 0
+		height auto
+		text-align center
+		font-size 12px
+		margin auto
+		p
+			padding 8px 0
+	.footer-copy-left
+		float none
+	.footer-copy-right
+		float none
+
+	.footer-list
+		i
+			// position relative
+			background white
+			border-radius 100%
+		p
+			display inline-block
+			padding-left 30px
+		&.f-redes
+			padding-top 0
+			a
+				margin-right 8px
+				&:last-child
+					margin-right 0
+			i
+				font-size 43px
+				
+@media screen and (max-width 380px)
+	.footer-list
+		a
+			font-size 14px

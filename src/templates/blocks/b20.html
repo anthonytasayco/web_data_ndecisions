@@ -1,0 +1,53 @@
+{% extends "../common/_base2.html" %}
+
+{% block cssadicional %}
+{%endblock %}
+
+{% block classbody %}{% endblock %}
+
+{% block content %}
+
+<!-- BLOQUE 20 -->
+<section class="b20-bloque-noticia">
+	<div class="wancho">
+		<ul class="b20-lista-noticia">
+			{% for row in "6"|get_range %}
+			<li class="b20-li-noticia">
+				<a href="#">
+					<div class="b20-item-noticia">						
+						<img  class="b20-img-noticia" src="{{STATIC_URL}}img/noticias.jpg" >
+						<div class="b20-info-noticia">
+							<div class="row">
+								<div class="b20-fecha">
+									<i class="icon-11"></i>
+									<span class="b20-fecha">02 / 08 / 2016</span>
+								</div>
+
+								<h4 class="b20-titulo-notica">
+									titulo de la noticias en los portales bew noti
+								</h4>
+
+								<div class="b20-link-noticia block-general padding-0"> 
+								 	<span href="" class="g-btn-2 b20-btn">Leer más</span>	
+								</div>
+							</div>	
+						</div>
+					</div>
+				</a>
+			</li>
+			{% endfor %}
+		</ul>	
+	<div class="block-general b20-block-general padding-0 text-center"> 
+                <a href="" class="g-btn-1 b20-btn">Ver más <i class="icon-arrow-down b20-icons-down"></i> </a>             
+            </div>
+	</div>
+</section>
+
+{% endblock %}
+{% block jsfinal %}
+<script type="text/javascript">
+	$(function(){
+
+	});
+</script>
+{% endblock %}

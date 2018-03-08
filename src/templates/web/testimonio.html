@@ -1,0 +1,54 @@
+{% extends "common/_base.html" %}
+{% load  %}
+{% block cssadicional %}
+{% endblock %}
+
+{% block classbody %}{% endblock %}
+
+{% block content %}
+<!-- BANNER -->
+<div class="block-banner" style="background-image: url({{banner.fondo.url}});">
+	<div class="wancho"> 	
+		<h1>{{banner.titulo}}</h1>		
+	</div>
+</div>
+
+
+<!-- BLOQUE 13 -->
+<section class="b13">
+	<div class="b13-links wancho">
+		<ul>
+			<li><a href="{% url 'web:home' %}">Home</a></li>
+			<li class="active"><a href="{% url 'web:testimonios' %}">Testimonios</a></li>
+		</ul>
+	</div>
+	<div class="b13-wraper">
+		{% for row in testimonios %}
+			<div class="b13-item">
+				<div class="b13-contentinfo">
+					<div class="b13-contentlogo">
+						<img src="{{row.imagen.url}}" alt="" width="128" height="128">
+					</div>
+					<h3>{{row.titulo}}</h3>
+					<span>{{row.autor}}</span>
+					<div class="b13-parrafo">
+						{{row.texto|safe}}
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+	{% if cantidad > testimonios_POR_PAGINA %}
+	<div class="b13-paginador">
+		{% for p in paginator.page_range %}
+			<div class="b13-page {% if p == pag %}active{% endif %}">
+				<a href="?p={{p}}">{{p}}</a>
+			</div>
+		{% endfor %}
+	</div>
+	{%endif%}
+</section>
+{% endblock %}
+
+{% block jsfinal %}
+{% endblock %}

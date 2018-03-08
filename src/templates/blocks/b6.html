@@ -1,0 +1,65 @@
+{% extends "../common/_base2.html" %}
+
+{% block cssadicional %}
+<link rel="stylesheet" href="{{STATIC_URL}}js/owl-carousel/owl.carousel.css">
+{%endblock %}
+
+{% block classbody %}{% endblock %}
+
+{% block content %}
+
+<!-- BLOQUE 6 -->
+
+	<section class="b6">
+		<div class="wancho">
+			<div class="b6-title">
+				<h2 class="g-general-title">Nuestros <span>clientes</span></h2>
+			</div>
+			<ul class="b6-slider">
+				{% for row in "5"|get_range %}
+				<li class="b6-item">
+					<img src="{{STATIC_URL}}media/b6-logos.png" alt="" width="144" height="102">
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</section>
+
+{% endblock %}
+{% block jsfinal %}
+<script type="text/javascript" src="{{STATIC_URL}}js/owl-carousel/owl.carousel.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var b6itemcarrusel= $('.b6-item').length;
+
+			if (b6itemcarrusel > 4) {
+				$('.b6-slider').addClass('owl-carousel');
+
+
+			$('.owl-carousel').owlCarousel({
+				loop:true,
+				margin:0,
+				nav:false,
+				autoplay: true,
+				responsive:{
+					0:{
+						items:3
+					},
+					400:{
+						items:4
+					},
+					768:{
+						items:6
+					},
+					1020:{
+						items:8
+					}
+				}
+
+			});
+
+			$('.b6 .owl-prev, .b6 .owl-next').text('');
+		}
+	});
+</script>
+{% endblock %}

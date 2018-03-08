@@ -1,0 +1,360 @@
+.b12
+	font-size 0
+	display flex
+	flex-direccion row
+	fex-wrap wrap
+	justify-content space-around
+	aligns-items strech
+	.wancho
+		max-width 1070px
+		
+.b12-input-full
+	width 100%
+	font-size 0
+	margin-bottom 12px
+	position relative
+	width 100%
+	height 50px
+	border-radius 8px
+	transition-all()
+	placeholder(#666666,t-3)
+	input
+		border none
+		background none
+		border 1px solid #f4f4f4
+		background transparent
+		display block
+		width 100%
+		padding 12px 10px
+		font-size 15px
+		font-family t-3
+		color #666666
+		width 100%
+		height 50px
+		padding-left 17px
+		box-sizing border-box
+		border 0px
+		border-radius 8px
+		box-shadow -2px 2px 9px 0px rgba(162,162,162,0.39) inset
+		appearance none
+	&:hover
+		border 0px
+		box-shadow 0px 1px 4px 2px #EF7A13
+		transition all 400ms ease
+		input
+			border 1px solid c-0
+			border 0px
+.b12-select
+	position relative
+	placeholder(#333333,t-2)
+	select
+		appearance none
+		font-size 15px
+		border none
+		background none
+		border 1px solid #cccccc
+		background transparent
+		color #333333
+		font-family t-2
+		border-radius 10px
+		box-sizing border-box
+		display block
+		width 100%
+		padding 12px 10px
+		appearance none
+		cursor pointer
+		border none
+		background none
+		border 1px solid #f4f4f4
+		background transparent
+		display block
+		width 100%
+		padding 12px 10px
+		font-size 15px
+		font-family t-3
+		color #666666
+		width 100%
+		height 50px
+		padding-left 17px
+		box-sizing border-box
+		border 0px
+		border-radius 8px
+		box-shadow -2px 2px 9px 0px rgba(162,162,162,0.39) inset
+	&:before
+		content "\e906"
+		width 50px
+		line-height 40px 
+		height 40px
+		background-color white
+		position absolute
+		display inline-block
+		font-family icomoon
+		font-size 13px
+		// top 0
+		// line-height 25px
+		right 8px
+		color #333333
+		top 50%
+		transform translateY(-50%)
+		pointer-events none
+		text-align center
+.b12-btn
+	text-align right
+	display flex
+	justify-content flex-end
+	padding 23px 0 16px
+.b12-iconos
+	padding-top 38px
+	padding-bottom 4px
+	p
+		margin 0
+		font-size 16px
+		font-family t-0
+		color c-1
+		line-height 1.3
+
+.b12-wrap-imagen
+	max-width 332px
+	margin auto
+	box-sizing border-box
+	h3
+		padding 11px 0
+	p, a
+		margin 0
+		padding 12px 0
+		position relative
+	a 
+		display block
+		color #001b36
+		// &:nth-of-type(1)
+		// 	padding-top 15px
+	.b12-link-email
+		padding-top 16px
+	img
+		max-width 100%
+		height auto
+		display inline-block
+	.email
+		margin 0
+		color c-0
+		font-size 16px
+		font-family t-3
+		position relative
+		padding-left 25px
+		display inline-block
+		&:before
+			content '\e901'
+			position absolute
+			font-family icomoon
+			color c-0
+			font-size 15px
+			left 0
+			top 12px
+		&:after
+			content ''
+			position absolute
+			width 13px
+			height 1px
+			background rgba(c-1,0.3)
+			right 0
+			top 0
+			content none
+		&.fono
+			padding-bottom 15px
+			&:before
+				content '\e902'
+			&:after
+				content ''
+		&.ubi
+			padding-top 10px
+			&:before
+				content '\e903'
+			&:after
+				content ''
+			p
+				&:before
+					width 100%
+.b12-row-tel
+	padding-top 8px 
+	padding-bottom 8px
+	a 
+		font-size 24px
+		color c-1
+		font-family t-4
+		display block
+		padding 2px 0
+		// padding-bottom 5px
+		position relative
+.b12-redes
+	// display table-cell
+	// width 2000px
+	// vertical-align middle
+	using-flex(row, flex-start, center)
+	height 80px
+	position relative
+	p
+		display inline-block
+		padding 0 10px
+		padding-left 0
+		color c-1
+		font-size 16px
+		font-family t-3
+	a
+		vertical-align middle
+		font-size 37px
+		color c-10
+		padding 0 6px
+		padding-left 0
+		&:last-child
+			color c-3
+			padding-right 0
+	&:before
+		content ''
+		position absolute
+		width 383px
+		height 1px
+		background rgba(c-1,0.3)
+		right 0
+		// left 0
+		top 0
+	
+
+.b12-center
+	&.b12-left
+		max-width 570px
+		width 570px
+		margin 0
+		padding 0 30px
+
+.b12-contacto
+	display flex
+	justify-content flex-end
+
+.b12-contacto, .b12-correos
+	width 50%
+	// display inline-block
+	vertical-align top
+	font-size 15px
+	background-color #fff
+	padding 128px 0
+	padding-bottom 65px
+.b12-contacto
+	box-shadow 0px 0px 30px 10.8px rgba(0, 0, 0, 0.06)
+	z-index 5
+.b12-correos
+	background-color #fafafa
+	text-align right
+	position relative
+	&:after
+		content ''
+		width 100%
+		height 0px 
+		box-shadow 0px 0px 35px 10.8px rgba(0, 0, 0, 0.04)
+		position absolute 
+		left 0
+		bottom 0
+.b12-contacto
+	padding-top 63px
+	
+.b12-title
+	h3
+		margin 0
+		font-size 26px
+		font-family t-1
+		line-height 1
+		color c-1
+		margin-bottom 5px
+	p
+		margin 0
+		font-size 16px
+		font-family t-0
+		color #001335
+		line-height 1.3
+		padding 10px 0
+		padding-bottom 28px
+.b12-banner
+	background-image url("../media/1080x132.png");
+// .b12-link-email
+// 	padding-top 40px
+@media screen and (max-width 1024px)
+	.b12-wrap-imagen
+		width 90%
+		max-width 90%
+	.b12-redes
+		justify-content flex-end
+@media screen and (max-width 960px)
+	.b12-wrap-imagen
+		max-width 570px
+	.b12-redes 
+		&:before
+			width 100%
+@media screen and (max-width 800px)
+	.b12-contacto, .b12-correos
+		// margin-top 10px
+		width 100%
+		
+	.b12
+		display block
+	.b12-center
+		&.b12-left
+			max-width 100%
+			width 100%
+			padding 0 15px
+	.b12-wrap-imagen
+		width 100%
+		// max-width 460px
+		max-width 100%
+		padding 0 15px
+		text-align center
+		.email 
+			&:after
+				right 35%
+				// transform translateX(-50%)
+	.b12-correos
+		padding 30px 0
+	.b12-contacto
+		padding 30px 0 15px
+	.b12-redes
+		justify-content center
+		a 
+			margin 0
+		&:before
+			width 90%
+			left 50%
+			transform translateX(-50%)
+	.b12-row-tel
+		a 
+			font-size 20px
+@media screen and (max-width 480px)
+	.b12-wrap-imagen
+		max-width 100%
+		span 
+			font-size 20px
+	.b12-contacto, .b12-correos
+		padding 15px 0
+	.b12-title
+		h3
+			font-size 20px
+	.b12-redes
+		p
+			display block
+			padding 5px 0
+		a
+			padding-left 10px
+			padding-right 0
+	.b12-iconos
+		padding 10px
+	.b12-row-tel
+		a 
+			font-size 18px
+@media screen and (max-width 375px)
+	.b12-redes
+		a 
+			padding-left 0
+			width 50%
+			padding 0 15px
+			box-sizing border-box
+			&:nth-of-type(1)
+				text-align right 
+			&:nth-of-type(2)
+				text-align left

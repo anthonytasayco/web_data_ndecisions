@@ -1,0 +1,53 @@
+.cf {
+  zoom: 1;
+}
+.cf:after,
+.cf:before {
+  content: "";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+.g2-inputs {
+  max-width: 570px;
+  width: 100%;
+  height: 50px;
+  position: relative;
+  border-radius: 8px;
+  -webkit-transition: all 400ms ease;
+  -moz-transition: all 400ms ease;
+  -o-transition: all 400ms ease;
+  -ms-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+.g2-inputs input {
+  font-size: 15px;
+  font-family: 'Conv_Lato-Regular', sans-serif;
+  color: #666;
+  max-width: 570px;
+  width: 100%;
+  height: 50px;
+  padding-left: 17px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0px;
+  border-radius: 8px;
+  -webkit-box-shadow: -2px 2px 9px 0px rgba(162,162,162,0.39) inset;
+  box-shadow: -2px 2px 9px 0px rgba(162,162,162,0.39) inset;
+}
+.g2-inputs:hover {
+  border: 0px;
+  -webkit-box-shadow: 0px 1px 4px 2px #ef7a13;
+  box-shadow: 0px 1px 4px 2px #ef7a13;
+  -webkit-transition: all 400ms ease;
+  -moz-transition: all 400ms ease;
+  -o-transition: all 400ms ease;
+  -ms-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+.g2-inputs:hover input {
+  border: 1px solid #ef7a12;
+  border: 0px;
+}

@@ -1,0 +1,61 @@
+{% extends "common/_base.html" %}
+
+{% block cssadicional %}
+{% endblock %}
+
+{% block classbody %}{% endblock %}
+
+{% block content %}
+<!-- BANNER	 -->
+<div class="block-banner" style="background-image: url({{banner.fondo.url}});">
+	<div class="wancho"> 	
+		<h1>{{banner.titulo}}</h1>		
+	</div>
+</div>	 			
+
+
+<!-- BLOQUE 11 -->
+<section class="b11">	
+	<div class="b11-bloque">		
+		<div class="b11-left">
+			<div class="b11-left-content">
+				<h2 class="b11-titulo">
+					{{somos.introduccion|safe}} 	
+				</h2>	
+				<div class="b11-texto">
+					{{somos.texto|safe}}
+				
+				</div>
+				<div class="b11-redes">
+					<p>{{somos.texto_redes}}</p>
+					<ul>
+						<li>
+							<a href="{{info.facebook}}" target="_blank">
+								<i class="icon-facebook-copy"></i>
+							</a>
+						</li>
+						<li>
+							<a href="{{info.twitter}}" target="_blank">
+								<i class="icon-twitter-copy"></i>
+							</a>
+						</li>
+					</ul>
+				</div>				
+			</div>
+		</div>
+		<div class="b11-right">
+			<div class="b11-right-content">
+				<figure class="b11-imagen">
+					<img src="{{somos.imagen.url}}" width="470" height="430" />
+				</figure>		
+			   <div class="g0-btn naranja">
+			     <a href="{{somos.enlace}}">{{somos.boton}} <i class=" icon-flecha-btn"></i></a>
+			   </div>
+			</div>
+		</div>
+	</div>	
+</section>
+{% endblock %}
+
+{% block jsfinal %}
+{% endblock %}

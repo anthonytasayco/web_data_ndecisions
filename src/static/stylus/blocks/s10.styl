@@ -1,0 +1,133 @@
+.b10
+	box-sizing border-box	
+	padding-bottom 51px
+	padding-top 51px
+	background: c-5
+	.g3-titulo
+		font-family t-3
+		font-size 18px
+		color #ec7f0e
+		text-transform uppercase	
+		padding-bottom 37px
+		margin-bottom 0px
+.b10-bloques
+	font-size 0px
+	text-align center
+	position relative
+		
+.b10-cliente-item	
+	display inline-block
+	width 25%
+	
+	// overflow hidden
+	a		
+		position relative
+		display flex
+		// border-bottom 1px solid rgba(235,121,0,0.2)
+		height 170px
+		width 100%
+		align-items: center
+		position relative
+		&:after
+			content ""
+			height 100%
+			position absolute
+			right 0px
+			top 0
+			border-right 1px solid rgba(235,121,0,0.2)
+	figure
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		margin: auto;
+		top 50%
+		transform: translateY(-50%);
+		margin-top: -17.5px;
+		figcaption
+			padding-right 40px
+			padding-left 40px
+			font-size 15px
+			font-family t-3
+			color c-4
+			text-transform uppercase	
+		img
+			display block
+			height auto
+			max-width 100%
+			// padding-bottom 16px
+			padding-bottom 19px
+			@media screen and (min-width 1024px)
+				filter: grayscale(100%);
+				-webkit-filter: grayscale(100%)
+				transition: all 400ms ease;	
+	&:last-child
+		a
+			&:after
+				border-right 0px	
+	@media screen and (min-width 1024px)
+		&:hover
+			cursor pointer
+			img
+				filter: grayscale(0%);
+				transition: all 400ms ease;	
+				-webkit-filter: grayscale(0%)
+			figure
+				opacity 0.8
+
+.b10-link
+	padding-top 50px
+	text-align center
+	.g0-btn
+		display inline-block
+			
+@media screen and (max-width 1024px)
+	.b10-cliente-item 
+		figure
+			figcaption
+				padding-left 12px
+				padding-right 12px
+				font-size 13px
+	.b10
+		// padding-top 20px
+		// padding-bottom 20px
+		.g3-titulo
+			padding-bottom 25px
+@media screen and (max-width 900px)
+	.b10-cliente-item
+		width 33.333%
+		&:nth-last-child(1)
+			display none
+@media screen and (max-width 768px)
+	.b10 
+		padding 30px 0
+@media screen and (max-width 720px)
+	.b10-bloques
+		.b10-cliente-item
+			width 33.3333333333%
+			&:last-child
+				display none		
+			&:nth-of-type(3)
+				a
+					&:after
+						display none
+						
+@media screen and (max-width 600px)
+	.b10-bloques
+		.b10-cliente-item
+			width 50%
+			&:nth-last-child(2)
+				display none		
+			&:nth-of-type(2)
+				a
+					&:after
+						display none
+@media screen and (max-width 480px)
+	.b10 
+		.g3-titulo
+			font-size 16px
+			text-align center
+	.b10-cliente-item
+		figure 
+			figcaption
+				padding 0 8px
+				font-size 12.5px

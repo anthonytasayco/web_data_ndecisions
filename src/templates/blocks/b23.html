@@ -1,0 +1,255 @@
+{% extends "../common/_base2.html" %}
+
+{% block cssadicional %}
+<link rel="stylesheet" href="{{ STATIC_URL }}js/validationform/validationEngine.jquery.css">
+{%endblock %}
+
+{% block classbody %}{% endblock %}
+
+{% block content %}
+
+<!-- BLOQUE 23 -->
+<section class="b23">
+	<div class="wancho">
+		<ul class="b23-wrapper">
+			<li class="b23-content">
+				<i class="icon-34"></i>
+				<div class="b23-title">
+					<h3>Llámanos</h3>
+
+					<div class="b23-texto">
+						<p>(51) 555 6789</p>
+						<p>(51) 555 6789</p>
+					</div>
+				</div>
+			</li>
+ 
+			<li class="b23-content">
+				<i class="icon-35"></i>
+				<div class="b23-title">
+					<h3>Ubícanos</h3>
+					
+					<div class="b23-texto">
+						<p>Av. Encalada 271 Monterrico</p>
+						<p>Santiago de Surco</p>
+					</div>
+				</div>
+			</li>
+
+			<li class="b23-content">
+				<i class="icon-36"></i>
+				<div class="b23-title">
+					<h3>Escríbenos</h3>
+				
+					<div class="b23-texto">
+						<p>info@steelser.com</p>
+						<p>ventas@steelser.com</p>
+					</div>
+				</div>
+			</li>
+		</ul>	
+	</div>
+
+	<div class="b23-form-content" style="background-image:url('{{STATIC_URL}}media/b23-fondo-form.png')">
+		<div class="wancho b23-content-wrap-form">
+			<div class="wancho">
+				<div class="b23-imagen">
+					<img src="{{STATIC_URL}}media/b23-imagen-persona.png" width="325" height="464" alt="">
+				</div>
+
+				<div class="b23-content-form">
+					<div class="b23-texto-infor">
+						<h3>¡ Envíanos un mensaje y resuelve tus dudas !</h3>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ut dolore magna aliqua. Ut enim ad miut aliquip ex ea commodo cbeatae vitae dicta sunt explicabo.</p>
+					</div>
+
+					<div class="b23-formulario">
+						<form class="b23-formu">
+							<div class="b23-input-full">
+								<div class="b23-input-mitad">
+									<input class="validate[required]" type="text" placeholder="Nombres">
+								</div>
+								
+								<div class="b23-input-mitad">
+									<input class="validate[required]" type="text" placeholder="Apellidos">
+								</div>
+							</div>
+
+							<div class="b23-input-full">
+								<div class="b23-input-mitad">
+									<input class="validate[required,custom[email]]" type="text" placeholder="E-mail">
+								</div>
+
+								<div class="b23-input-mitad">
+									<input class="validate[required]" type="text" placeholder="Tel. / Cel">
+								</div>
+							</div>
+
+							<div class="b23-textarea">
+								<textarea name="" id="" cols="30" rows="4" placeholder="Mensaje" class="validate[required]"></textarea>
+							</div>
+
+							<div class="b23-texto-noso">
+								<h3>¿Como te enteraste de nosotros?</h3>
+
+								<ul class="b23-checkbocks">
+									<li>
+										<div class="b23-checkbox">
+											<input class="validate[required]" name="check1" type="radio" id="chec">
+											<label class="b23-label" for="chec">Por google
+											</label>
+										</div>
+									</li>
+									
+									<li>
+										<div class="b23-checkbox">
+											<input class="validate[required]" name="check1" type="radio" id="chec1">
+											<label class="b23-label" for="chec1">Por Facebook
+											</label>
+										</div>
+									</li>
+
+									<li>
+										<div class="b23-checkbox">
+											<input class="validate[required]" name="check1" type="radio" id="chec2">
+											<label class="b23-label" for="chec2">Por el nombre de Steelser SAC
+											</label>
+										</div>
+									</li>
+									
+									<li>
+										<div class="b23-checkbox">
+											<input class="validate[required]" name="check1" type="radio" id="chec3">
+											<label class="b23-label" for="chec3">Por Twitter
+											</label>
+										</div>
+									</li>
+									
+									<li>
+										<div class="b23-checkbox">
+											<input class="validate[required]" name="check1" type="radio" id="chec4">
+											<label class="b23-label" for="chec4">Por referencia de un amigo
+											</label>
+										</div>
+									</li>
+
+									<li>
+										<div class="b23-checkbox">
+											<input class="validate[required]" name="check1" type="radio" id="chec5">
+											<label class="b23-label" for="chec5">Por la revista XXXXXXXX
+											</label>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+							<div class="b23-btn">
+								<input type="submit" class="btn-enviar" value="Enviar">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="b23-wrapper-mapa">
+		<div class="b23-abrir">
+			<a href="">Abrir Mapa</a>
+		</div>
+
+		<div class="b23-map">
+			<div id="map" class="b23-map-g"></div>
+			<div class="b23-cerrar">
+				<a  href="">Cerrar Mapa</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+{% endblock %}
+{% block jsfinal %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/validationform/jquery.validationEngine-es.js" ></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/validationform/jquery.validationEngine.js" ></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC6HdYzQtgz_4PNyWeWvgSQYcfmtscOopA"> </script>
+
+
+<script type="text/javascript">
+	$(function(){
+
+		$("form").validationEngine('attach',{
+			promptPosition : "topLeft",
+			autoHidePrompt : true,
+			autoHideDelay : 3000,
+			binded : false,
+			scroll : false,
+			validateNonVisibleFields : true
+
+		});
+
+		$(".btn-enviar").click(function(e) {
+			e.preventDefault();
+
+			var valid = $(this).closest('.b23-formu').validationEngine('validate');
+			if (!valid) {
+
+			}else{
+				alert('no error')
+			}
+		});
+
+
+		//MAPA
+		var map;
+		var marker;
+		// var f_latitud = -12.050000;
+		var f_latitud = -12.0703509;
+		// var f_latitud = -12.1028577;
+		var f_longitud = -77.03943190000001;
+		function initMap() {
+			var $map = $( '#map' );
+			if ( ! $map.length ) return;
+
+			var myLatlng = new google.maps.LatLng(-12.0703509, -77.03943190000001); // <- Your latitude and longitude
+
+			var styles = [];
+
+			var mapOptions = {
+				zoom             : 16,
+				center           : myLatlng,
+				mapTypeControl   : true,
+				disableDefaultUI : true,
+				zoomControl      : true,
+				scrollwheel      : false,
+				styles   		 : styles,
+				draggable        : true
+			}
+			map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+			marker = new google.maps.Marker({
+					position: myLatlng,
+					map: map,
+					icon:'{{ STATIC_URL }}img/logo1.png'
+			});
+		}
+		google.maps.event.addDomListener(window, 'load', initMap);
+
+		$('.b23-abrir a').click(function(e) {
+			e.preventDefault();
+			$('.b23-map').addClass('active')
+
+			$('.b23-content-wrap-form').toggle(500);
+			$('.b23-btn').toggle();
+		});
+
+		$('.b23-cerrar a').click(function(e) {
+			e.preventDefault();
+			$('.b23-map').removeClass('active')
+			$('.b23-content-wrap-form').toggle("fast");
+			$('.b23-btn').toggle("fast");
+		});
+	});
+</script>
+{% endblock %}

@@ -1,0 +1,126 @@
+.cf {
+  zoom: 1;
+}
+.cf:after,
+.cf:before {
+  content: "";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+.b14 {
+  height: calc(100vh - 206px);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.b14 .wancho {
+  text-align: center;
+}
+.b14 .g0-btn .icon-flecha-btn {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.b14 .g0-btn .icon-flecha-btn:before {
+  top: -3px;
+}
+.b14-bloque h2 {
+  font-family: 'Conv_Lato-Bold', sans-serif;
+  font-size: 140px;
+  color: #ef7a12;
+  margin-bottom: 0;
+  padding-bottom: 4px;
+}
+.b14-bloque span {
+  font-family: 'Conv_Lato-Bold', sans-serif;
+  font-size: 30.16px;
+  color: #ef7a12;
+  border-bottom: 1px solid #fbf0e5;
+}
+.b14-bloque p {
+  margin-bottom: 0px;
+  padding-bottom: 38px;
+  padding-top: 97px;
+}
+.b14-bloque p:nth-of-type(1) {
+  font-family: 'Conv_Lato-Regular', sans-serif;
+  font-size: 14px;
+  color: #4d4f53;
+}
+.b14-link {
+  text-align: center;
+}
+.b14-link .g0-btn {
+  display: inline-block;
+  height: 50px;
+  width: 195px;
+}
+@media screen and (max-width: 1024px) {
+  .b14-bloque h2 {
+    font-size: 90px;
+  }
+}
+@media screen and (max-width: 960px) {
+  .b14 .b14-bloque h2 {
+    font-size: 80px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .b14 .b14-bloque h2 {
+    font-size: 70px;
+  }
+  .b14 .b14-bloque p:nth-of-type(1) {
+    padding-top: 40px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .b14 {
+    height: auto;
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+  .b14 .b14-bloque h2 {
+    font-size: 60px;
+  }
+  .b14 .b14-bloque p:nth-of-type(1) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .b14 .b14-bloque h2 {
+    font-size: 50px;
+  }
+  .b14 .b14-bloque span {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .b14 .b14-bloque h2 {
+    font-size: 40px;
+  }
+  .b14 .b14-bloque span {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .b14 .b14-bloque h2 {
+    font-size: 30px;
+  }
+  .b14 .b14-bloque span {
+    font-size: 18px;
+  }
+}

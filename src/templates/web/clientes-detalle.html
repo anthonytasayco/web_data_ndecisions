@@ -1,0 +1,73 @@
+{% extends "common/_base.html" %}
+{% load static %}
+{% block cssadicional %}
+{% endblock %}
+
+{% block classbody %}{% endblock %}
+
+{% block content %}
+<!-- BANNER -->
+<div class="block-banner">
+	<div class="wancho"> 	
+		<h1>Ellos confían en nosotros</h1>		
+	</div>
+</div>
+
+
+<!-- BLOQUE 7 -->
+<section class="b7">
+	<div class="b7-wrapper">
+		<div class="wancho b7Miga">
+			<a href="{% url 'web:clientes' %}">Clientes</a>
+			<a href="clientes-detalle.html" class="active">{{cliente.nombre}}</a>
+		</div>
+
+		<div class="b7-wrapper-contenedor">
+			<div class="wancho">
+				<figure class="b7-figure">
+					<img src="{{cliente.imagen.url}}" alt="" width="172" height="125">
+				</figure>
+				
+				<div class="b7-wrapper-text">
+					<div class="b7-titu orange">
+						<h3>{{cliente.nombre}}</h3>
+						<span>{{cliente.ubicacion}}</span>
+					</div>
+
+					<div class="b7-titu black">
+						<span>{{cliente.titulo}}</span>
+						<h3>{{cliente.subtitulo}}</h3>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+</section>
+
+
+<!-- BLOQUE 8 -->
+<section class="b8">	
+ 	<div class="wancho">
+	 	<h3 class="g3-titulo">MÁS DE NUESTROS CLIENTES</h3> 				
+
+		<div class="b8-clientes">
+			<ul class="b8-bloques">
+				{% for row in relacionados %}
+					<li class="b8-cliente-item">
+						<a href="{{row.get_absolute_url}}">
+							<figure>
+								<img src="{{row.imagen.url}}" width="172" height="125" />					
+							</figure>
+							
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div> 		
+ 	</div>
+</section>
+{% endblock %}
+
+{% block jsfinal %}
+{% endblock %}

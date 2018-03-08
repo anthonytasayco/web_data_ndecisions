@@ -1,0 +1,136 @@
+{% extends "common/_base.html" %}
+{% load static core_tags%}
+{% block cssadicional %}
+<link rel="stylesheet" href="{% static '' %}js/validationform/validationEngine.jquery.css">
+{% endblock %}
+
+{% block classbody %}{% endblock %}
+
+{% block content %}
+<!-- BANNER -->
+<div class="block-banner" style="background-image: url({{banner.fondo.url}});">
+	<div class="wancho"> 	
+		<h1>{{banner.titulo}}</h1>		
+	</div>
+</div>
+
+
+<!-- BLOQUE 12 -->
+<section class="b12" id="">
+	<div class="b12-contacto">
+		<div class="b12-center b12-left">
+			<div class="b12-title">
+				<h3>{{seccion.titulo}}</h3>
+				{{seccion.texto|safe}}
+			</div>
+
+			<div class="b12-formulario">
+				<form class="b12-formu" method="POST" action="{% url 'web:contacto' %}">
+				{% csrf_token %}
+					<div class="b12-input-full">
+						<input class="validate[required]" type="text" placeholder="Nombres" name="nombre">
+					</div>
+
+					<div class="b12-input-full">
+						<input class="validate[required]" type="text" placeholder="Apellidos" name="apellido">
+					</div>
+
+					<div class="b12-input-full">
+						<input class="validate[required,custom[email]]" type="text" placeholder="Correo" name="email">
+					</div>
+
+					<div class="b12-input-full">
+						<input class="validate[required, custom[onlyNumberSp]]" type="text" placeholder="Teléfono ó Celular*" id="telefono" name="telefono">
+					</div>
+
+					<div class="b12-input-full">
+						<div class="b12-select b27-select">
+							<select name="servicio" class="validate[required]">
+								<option value="">Tipo de servicio requerido</option>
+								{% for s in servicios %}
+									<option value="{{s.nombre}}">{{s.nombre}}</option>	
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+
+				<div class="b12-btn">
+					<div class="g0-btnform naranja">
+						<a href="#" type="submit" class="btn-form">Enviar</a>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="b12-correos">
+		<div class="b12-center  b12-right">
+
+			<div class="b12-wrap-imagen">
+				<img src="{{seccion.imagen.url}}" alt="" width="158" height="46">
+
+				<div class="b12-iconos">
+					<h3 class="email">Email</h3>
+					{% for e in correos %}
+						
+					<a href="mailto:{{e.email}}" class="b12-link-email">{{e.email}}</a>
+					{% endfor %}
+
+					<h3 class="email fono">Teléfonos</h3>
+					<div class="b12-row-tel">
+					{% for t in telefonos %}
+						<a href="tel:{{t.telefono|tel}}">{{t.telefono}}</a>
+					{% endfor %}
+					</div>
+					<!-- <span>999-751544</span> -->
+
+					<h3 class="email ubi">Ubicación</h3>
+					{% for d in direcciones %}
+					<p>{{d.direccion}}</p>			
+					{% endfor %}
+				</div>
+
+				<div class="b12-redes">
+					<p>Enterate de lo último de <strong>INGERES</strong></p>
+					{% if info.facebook %}
+					<a href="{{info.facebook}}" target="_blank"><i class="icon-facebook-with-circle"></i></a>				
+					{% endif %}
+					{% if info.twitter %}
+					<a href="{{info.twitter}}" target="_blank"><i class="icon-twitter-with-circle"></i></a>					
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+
+{% block jsfinal %}
+<script type="text/javascript" src="{% static '' %}js/validationform/jquery.validationEngine.js"></script>
+<script type="text/javascript">
+	$(function(){
+
+		//b11
+		$("form").validationEngine('attach',{
+			promptPosition : "topLeft",
+			autoHidePrompt : true,
+			autoHideDelay : 1500,
+			binded : false,
+			scroll : false,
+			validateNonVisibleFields : true
+		});
+
+
+		$(".btn-form").click(function(e) {
+			e.preventDefault();
+			var valid = $(this).closest('.b12-formu').validationEngine('validate');
+			if (!valid) {
+
+			}else{
+				$('.b12-formu').submit()
+			}
+		});
+	});
+</script>
+{% endblock %}

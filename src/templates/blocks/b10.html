@@ -1,0 +1,54 @@
+{% extends "../common/_base2.html" %}
+
+{% block cssadicional %}
+{%endblock %}
+
+{% block classbody %}{% endblock %}
+
+{% block content %}
+
+<!-- BLOQUE 10 -->
+
+<section class="b10" style="background-image: url('{{STATIC_URL}}media/b10-imagen.jpg')">
+	<div class="wancho">
+		<div class="b10-center">
+			<div class="b10-left">
+				<div class="b10-title mision">
+					<div class="b10-mision">
+						<h2>Nuestra</h2>
+						<span>Misión</span>
+					</div>
+					</div>
+					<figure class="b10-imagen imagen-left">
+						<img src="{{STATIC_URL}}media/b10-mision.png" alt="">
+					</figure>
+					<div class="b10-texto taxt-mision">
+						<p>Brindamos servicios de ingeniería, fabricación y montaje de construcciones metálicas para la instalación de plantas industriales, locales comerciales, centros, ejecutando los proyectos dentro del plazo y costo previsto,que valor agregado al proyecto</p>
+				</div>
+			</div>
+			<div class="b10-right">
+				<div class="b10-title vision">
+					<div class="b10-mision">
+						<h2>Nuestra</h2>
+						<span>Visión</span>
+					</div>
+					<div class="b10-texto text-vision">
+						<p>Ser la empresa líder en construcciones metálicas, reconocida a nivel nacional por la calidad y eficiencia de sus servicios.</p>
+					</div>
+					<figure class="b10-imagen imagen-right">
+						<img src="{{STATIC_URL}}media/b10-vision.png" alt="">
+					</figure>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
+{% block jsfinal %}
+<script type="text/javascript">
+	$(function(){
+
+	});
+</script>
+{% endblock %}

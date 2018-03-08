@@ -1,0 +1,16 @@
+.cf {
+  zoom: 1;
+}
+.cf:after,
+.cf:before {
+  content: "";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+.g3-titulo {
+  font-family: 'Conv_Lato-Regular', sans-serif;
+  font-size: 30px;
+  color: #001335;
+}

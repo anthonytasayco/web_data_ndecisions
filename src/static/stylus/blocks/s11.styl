@@ -1,0 +1,196 @@
+.b11
+	box-sizing border-box
+	padding-top 33px
+	padding-bottom 123px
+	.g0-btn
+		padding 0px
+		height 64px		
+		a
+			display block
+			height: 64px;
+			display: table-cell;
+			vertical-align: middle;
+			width: 2000px;
+		i, span
+			vertical-align middle
+			display inline-block
+		span
+			padding-right 11px
+	.icon-arrow-right
+		display block
+		width 16px
+		height 16px
+		border-radius 50%
+		background-color white
+		position relative
+		&:before
+			border-radius 0%
+			left -1px
+			right auto
+			top -2px
+			font-size 19px
+			background-color rgba(0,0,0,0)	
+.b11-bloque
+	max-width 970px
+	margin 0 auto
+	width 95%
+	font-size 0px
+	position relative
+.b11-left, .b11-right
+	display inline-block
+	vertical-align top 	
+.b11-left
+	width 51.547% 
+.b11-left-content
+	// padding-right 35px
+	padding-right 7%	
+.b11-right
+	width 48.453% 
+.b11-titulo
+	font-family t-1
+	font-size 24px
+	margin-bottom 0
+	padding-bottom 54px
+	padding-top 63px
+	font-size: 24px;
+	color: rgb(235, 121, 0)
+	font-weight: 400
+	line-height: 1.21
+.b11-imagen
+	img
+		display block
+		max-width 100%
+		height auto
+.b11-texto
+	font-family t-3
+	font-size 16px
+	color c-4
+	p
+		margin-bottom 0px
+		margin-top 15px
+		&:first-child
+			margin-top 0
+.b11-right-content
+	position: absolute;
+	bottom: 47px;
+	right: 0px;
+	width 48.453%
+	.g0-btn
+		position absolute 
+		bottom -47px
+		width 100%
+		max-width: 100%
+.b11-redes
+	border-top 1px solid #cce1fe
+	padding-top 20px
+	margin-top 51px
+	ul
+		padding 0
+	p
+		font-size 14px
+		// padding-right 55px
+		padding-right 11.83%
+		margin-bottom 0
+		font-family t-1
+		color c-4
+		font-size 16px
+	i
+		font-size 18px
+		color c-5
+		width 18px
+		height 19px
+		position absolute
+		left 0px
+		right 0px
+		top 0px
+		bottom 0px
+		margin auto		
+	li
+		display inline-block
+		&:first-child
+			a	
+				background-color #385c8e
+				margin-right 12px
+		&:last-child
+			a	
+				background-color #76a9ea	
+	a
+		display block
+		border-radius 50%
+		width 32px
+		height 32px
+		position relative
+				
+	p,ul
+		vertical-align middle
+		display inline-block
+
+@media screen and (max-width 1024px)
+	.b11
+		padding-top 100px
+		padding-bottom 30px			 
+	.b11-titulo
+		// padding-top 0px
+		padding-bottom 10px
+	.b11-redes
+		margin-top: 15px;
+		padding-top 15px
+	// .b11-redes 
+	// 	p
+	// 		padding-right: 35px;
+	.b11-left 
+		position relative
+		top -80px
+@media screen and (max-width 900px)
+	.b11-right-content
+		width 40%
+		bottom 35%
+	.b11-left
+		width 60%
+	.b11-titulo
+		padding-top 20px
+@media screen and (max-width 768px)	
+	.b11-right-content 
+		.g0-btn
+			width 90%
+			max-width 470px
+			left 0px
+			right 0px
+			margin auto
+	.b11-left, .b11-right
+		width 100%
+	.b11-right-content
+		position relative
+		bottom 0px
+		width 100%
+	.b11
+		padding-bottom 80px
+	.b11-right
+		padding-top 0
+		margin-top -50px
+	.b11-left-content
+		padding-right 0	
+	.b11-redes 
+		p,ul
+			display block
+		p
+			padding-right 0
+			padding-bottom 10px
+			text-align center
+		ul
+			text-align center
+	.b11-titulo
+		font-size 21px	
+		padding-top 10px
+@media screen and (max-width 760px)			
+	.b11-redes 
+		p
+			padding-right 10.5%
+@media screen and (max-width 480px)
+	.b11-titulo
+		font-size 18px 
+		line-height 1.2
+	.b11 
+		.g0-btn 
+			i 
+				display none

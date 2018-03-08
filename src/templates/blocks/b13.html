@@ -1,0 +1,450 @@
+
+{% extends "../common/_base2.html" %}
+
+{% block cssadicional %}
+<link rel="stylesheet" href="{{STATIC_URL}}js/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="{{STATIC_URL}}css/jquery.bxslider.css">
+{%endblock %}
+
+{% block classbody %}{% endblock %}
+
+{% block content %}
+
+<!-- BLOQUE 14 -->
+
+<section class="b13-bloque-proyecto">	
+		<div class="wancho b13-cabecera-proyecto">
+			<h2 class="g-general-title text-center">Nuestras <span>Obras</span></h2>	
+			<div class="b13-parrafo-proyecto">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				
+			</div>
+		</div>
+		
+		<div class="b13-lista-proyecto">
+			<ul class="b13-content-bloque-list">
+
+			{% for row in "8"|get_range %}
+			 	<li class="b13-li-item">
+			 		<a class="b13-item-proyecto-a">
+
+                    <div class="b13-item-lugar-fecha">
+						<div class="b13-item-proyecto" style="background-image: url('../../static/img/b3-fondo-obras.jpg') ">
+							<div class="row not-row">
+								<h4 class="b13-lugar-proyecto">
+									<span >UPN</span>
+									Caja Ascensor
+								</h4>		
+								<div class="b13-fecha-proyecto">
+									Agosto 2015
+								</div>
+								<div class="block-general"> 
+							 		<span href="" class="g-btn-2 b13-open-box">Ver proyecto</span>	 			
+								</div>
+							</div>
+						</div>
+                    </div>        
+
+                   
+						<div class="b13-contenido-lista-proyecto">							
+								<section class="b14">
+									<div class="wancho">
+										<div class="b14-imagen">
+											<ul class="b14-slider">
+											{% for row in "4"|get_range %}
+												<li class="b14-item" id="tab{{loop.index}}">
+													<figuere >
+														<img src="{{STATIC_URL}}media/b14-imagen.jpg" alt="" width="498" height="326">
+													</figuere>
+												</li>
+											{% endfor %}
+											</ul>
+											<ul class="b14-owl">
+											{% for row in "4"|get_range %}
+												<li class="b14-panel" data-id="tab{{loop.index}}">
+													<img src="{{STATIC_URL}}media/b14-tab.jpg" alt="" width="119" height="77">
+												</li>
+											{% endfor %}
+											</ul>
+										</div>
+
+										<div class="b14-inf">
+											<span class="b14-close close-general"></span>
+											<div class="b14-sandv">
+												<img src="{{STATIC_URL}}media/b14-logo.png" alt="">
+											</div>
+
+											<div class="b14-title">
+												<h3>Título de la obra UPN Caja Ascensor</h3>
+											</div>
+
+											<div class="b14-texto">
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ut dolore magna aliqua. Ut enim ad miut aliquip ex ea commodo cbeatae vitae dicta sunt explicabo.
+												Ut enim ad miut commodo cbeatae vitae dicta sunt explicabo.</p>
+											</div>
+											<ul class="b14-obras">
+												<li class="b14-itm">
+													<i class="icon-15 b14-icon"></i>
+													<div class="b14-span">
+														<span>Ubicación</span>
+														<em>Cieneguilla - Ica</em>
+													</div>
+												</li>
+												<li class="b14-itm">
+													<i class="icon-32  b14-icon"></i>
+													<div class="b14-span">
+														<span>Área construída</span>
+														<em>Cieneguilla - Ica</em>
+													</div>
+												</li>
+												<li class="b14-itm">
+													<i class="icon-11 b14-icon"></i>
+													<div class="b14-span">
+														<span>Tiempo de Obra</span>
+														<em>Cieneguilla - Ica</em>
+													</div>
+												</li>
+												<li class="b14-itm">
+													<i class="icon-12 b14-icon"></i>
+													<div class="b14-span">
+														<span>Tonelaje de obra</span>
+														<em>Cieneguilla - Ica</em>
+													</div>
+												</li>
+											</ul>
+										</div>
+
+									</div>
+								</section> 								
+							
+						</div>
+					</a>
+			 	</li>
+			{% endfor %}
+			 
+			 	
+			</ul>
+
+            <div class="block-general b13-block-general padding-0 text-center"> 
+                <a href="" class="g-btn-1 b13-btn">Ver más <i class="icon-arrow-down b13-icons-down"></i> </a>             
+            </div>
+
+
+		</div>
+</section>
+
+{% endblock %}
+{% block jsfinal %}
+<!--UNICAMENTE TABS jqueryui-->
+<script type="text/javascript" src="{{STATIC_URL}}js/owl-carousel/owl.carousel.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/jquery.bxslider.min.js"></script>
+
+
+
+<script type="text/javascript">
+$(function() {
+
+		//$('.b13-li-item').addClass('b13-position-relative');
+        $('.b13-item-proyecto').on("click", function(event) {
+       		event.preventDefault();
+       		//console.log('ff')
+       		//$('.b13-li-item').removeClass('b13-position-relative');
+            
+            $('.b13-item-proyecto').removeClass('active');
+       		$('.b13-li-item').removeClass('active').removeAttr('style');
+            $(this).addClass('active');
+            //$(".b13-li-item").find(".contenido-lista-proyecto").css("opacity","1"); 
+       		$(".b13-li-item").find(".b13-contenido-lista-proyecto").css("opacity","0").removeClass('active').removeAttr('style');
+
+
+            // alto item
+            if (!dispositivo_movil) {
+
+                var alto_item = $(this).closest('.b13-li-item').outerHeight(false);
+                $('.b13-li-item').height(alto_item);
+
+                var parent = $('.b13-li-item');
+                parent.removeClass('active');
+
+                parent = $(this).closest(parent).addClass('active');
+                $('.all').removeClass('active');
+                setTimeout(function() {
+                    $('html, body').animate({
+                        scrollTop: parent.offset().top
+                    }, 500);
+
+                }, 350)
+
+            }
+            // console.log(alto_item);
+       		var altoliproyecto1 =$(this).closest(".b13-li-item").outerHeight(true);
+       		var altoliproyecto2 =$(this).closest(".b13-li-item").find(".b13-contenido-lista-proyecto").outerHeight(true); 		
+       		
+
+          	boxPosition = $(this).position();
+            topFinal = boxPosition.top + altoliproyecto1;
+          
+
+            $(this).closest('.b13-li-item').find('.b13-contenido-lista-proyecto').stop().animate( { 'top': topFinal + 'px', "z-index": "1" , "opacity": "1" } ).addClass('active');
+              //alert(altoliproyecto);
+       		//$(this).closest(".b13-li-item").css("height",altoliproyecto1+altoliproyecto2);
+          	//$(this).closest(".b13-li-item").find(".contenido-lista-proyecto").css( {"opacity":"1", "color", "red" } ).addClass('active');
+          	//$(this).closest(".b13-li-item").find(".contenido-lista-proyecto").css("opacity","1" );
+
+          	$(this).closest(".b13-li-item").stop().animate({ height: altoliproyecto1+altoliproyecto2, duration: "fast"});
+              
+
+
+        });
+
+    
+    function closedetalles(){
+           //$('.b34-slide-item').height(alto_item_img);
+           //alert("hola");           
+           $('.b13-li-item').removeClass('active').removeAttr('style');
+           //$('.all').removeClass('active');
+           $('.b13-item-proyecto').removeClass('active');
+           $('.b13-li-item').find(".b13-contenido-lista-proyecto").css("opacity","0").removeClass('active').removeAttr('style');
+    }
+
+
+    $('.close-general').click(function(event) {
+        closedetalles();
+     });
+  
+  
+  });
+         
+</script>
+
+
+<script type="text/javascript">
+    $(function() {
+        // quitar el alto del item en css
+        var st = $(window).scrollTop()
+
+        $('.b34-item-lanza').click(function(event) {
+            event.preventDefault();
+
+
+            $('.all').addClass('active');
+
+            st = $(window).scrollTop()
+                // $('body').addClass('none');
+                // $('.b34-slide-item').click(function(e) {
+                //     $('body').addClass('overflow-hidden')
+                // })
+
+            // $('.b34-item-lanza').removeClass('overflow-hidden');
+            // $(window).scrollTop(0)
+            // $("body").addClass('active');
+            $('.b34-item-lanza').removeClass('active');
+            $(this).addClass('active');
+
+            // close detalles abiertos
+            $('.b34-slide-item').removeAttr('style');
+            $('.b34-detail').removeClass('active').removeAttr('style');
+            // close detalles abiertos
+
+            // alto item
+            if (!dispositivo_movil) {
+
+                var alto_item = $(this).closest('.b34-slide-item').outerHeight(false);
+                $('.b34-slide-item').height(alto_item);
+
+                var parent = $('.b34-slide-item');
+                parent.removeClass('active');
+
+                parent = $(this).closest(parent).addClass('active');
+                $('.all').removeClass('active');
+                setTimeout(function() {
+                    $('html, body').animate({
+                        scrollTop: parent.offset().top
+                    }, 300);
+
+                }, 500)
+
+            }
+            // console.log(alto_item);
+
+
+            //alto detalle
+            var alto_detalle = $(this).closest('.b34-slide-item').find('.b34-detail').outerHeight(false);
+            console.log(alto_detalle);
+
+            // posicion caja
+            boxPosition = $(this).position();
+            topFinal = boxPosition.top + alto_item
+
+
+            //posicion detalle
+            $(this).closest('.b34-slide-item').find('.b34-detail').css('top', topFinal + 'px').addClass('active');
+
+
+            //aumento de alto a item
+            $(this).closest('.b34-slide-item').height(alto_detalle + alto_item);
+
+
+        });
+
+        function closedetalle() {
+            var alto_item_img = $('.b34-slide-item:first-child img').height();
+            console.log(alto_item_img);
+            // alto item
+            $(window).scrollTop(st)
+            $('.b34-slide-item').height(alto_item_img);
+            $('.b34-detail').removeClass('active').removeAttr('style');
+            $('.b34-item-lanza').removeClass('active');
+            $('.all').removeClass('active');
+            // setTimeout(function() {
+
+            //     $('.b34-slide-item').removeAttr('style');
+            // }, 100);
+
+            $('html, body').removeClass('overflow-hidden');
+            setTimeout(function() {
+
+                $('.b10-slide-item').removeAttr('style');
+            }, 100);
+            $('body').removeClass('active');
+
+        };
+        $('.b34-close').click(function(event) {
+            closedetalle();
+
+        });
+
+        $(window).resize(function(event) {
+            closedetalle();
+        });
+
+
+        $('.no-active').click(function(e) {
+            // e.preventDefalut();
+            closedetalle();
+        });
+
+        $('.b34-slide-item').click(function(e) {
+
+            $('.cnt-wrapper').addClass('');
+        })
+
+
+        //bloque 16
+        var itemSl = $('.b34-nav li').length;
+        if (itemSl > 4) {
+            $('.b34-slide').bxSlider({
+                slideWidth: 256,
+                minSlides: 1,
+                maxSlides: 4,
+                slideMargin: 0,
+                nextText: '',
+                prevText: '',
+                pager: false,
+                infiniteLoop: false,
+                hideControlOnEnd: true,
+                moveSlides: 1,
+                auto: false,
+                pause: 6000,
+                onSlideBefore: function($slideElement) {
+                    setTimeout(function() {
+                        $slideElement.addClass('active');
+                        if ($slideElement.hasClass('active')) {
+
+                            $('.b34-tab-item').removeClass('active');
+                            var datatab = $slideElement.find('.b34-tab-1').attr('data-link');
+                            $('.b34-tab-item[data-tab="' + datatab + '"]').addClass('active');
+
+                        };
+                    }, 500);
+                    $('.b34-slide').children().removeClass('active');
+
+                    // activar tab segun active
+                    // closedetail();
+
+                }
+            });
+        };
+
+        //TAB
+        $('.b34-tab-item:first-child').addClass('active');
+
+        link_tab = $('.b34-tab-1');
+
+        link_tab.click(function() {
+            closedetalle();
+            $('.b34-slide').children().removeClass('active');
+            link_tab.parent().removeClass('active');
+            $(this).parent().addClass('active');
+            dataBox = $(this).attr('data-link');
+            $('.b34-tab-item').removeClass('active');
+            $('.b34-tab-item[data-tab="' + dataBox + '"]').addClass('active');
+        });
+
+
+
+
+
+
+
+    });
+    // $(window).load(function() {
+    // 	$(window).resize();
+    // });
+</script>
+
+
+
+<script type="text/javascript">
+	$(function(){
+		var b14panelcarrusel= $('.b14-panel').length;
+
+			if (b14panelcarrusel > 3) {
+				$('.b14-owl').addClass('owl-carousel');
+				$('.owl-carousel').owlCarousel({
+					loop:true,
+					margin:10,
+					nav:false,
+					autoplay:false,
+					responsive:{
+						0:{
+							items:2
+						},
+						400:{
+							items:3
+						},
+						768:{
+							items:4
+						},
+						1020:{
+							items:4
+						}
+					}
+
+				});
+			}
+
+		$('.b14-slider').bxSlider({
+			mode:'fade',
+			auto: false,
+			nextText:'',
+			prevText:'',
+			pager: false,
+		});
+
+		$('.b14-panel').click(function(){
+			$('.b14-panel').removeClass('active');
+			$(this).addClass('active');
+
+			var dataId = $(this).attr('data-id');
+
+			$('.b14-item').removeClass('active');
+			$('.b14-item[id="'+dataId+'"]').addClass('active');
+		})
+	});
+</script>
+
+
+<!--END UNICAMENTE TABS jqueryui-->
+{% endblock %}

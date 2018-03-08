@@ -1,0 +1,74 @@
+{% extends "../common/_base2.html" %}
+
+{% block cssadicional %}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}js/boxlight/boxlight.css"/>
+<link rel="stylesheet" href="{{STATIC_URL}}js/validationform/validationEngine.jquery.css">
+{%endblock %}
+
+{% block classbody %}{% endblock %}
+
+{% block content %}
+
+<!-- BLOQUE 22 -->
+
+<a href="#contenido1" class="open-boxlight">abrir</a>
+<section class="b22 boxlight" id="contenido1">
+	<div class="wancho">
+		<form action="">
+			<div class="b22-title">
+				<h2 class="g-general-title">Contacta <span>un asesor</span></h2>
+			</div>
+			<div class="b22-texto">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ut dolore magna aliqua. Ex ea commodo cbeatae vitae dicta sunt explicabo.</p>
+			</div>
+			<div class="b22-form">
+				<div class="b22-input">
+					<input type="text" placeholder="Nombres  y Apellidos *" class="validate[required]">
+				</div>
+				<div class="b22-col-dos">
+					<div class="b22-inputdos">
+						<input type="text" placeholder="E - mail *" class="validate[required,custom[email]]">
+					</div>
+					<div class="b22-inputdos">
+						<input type="text" placeholder="Teléfono *" class="validate[required]">
+					</div>
+				</div>
+				<div class="b22-textarea">
+					<textarea name="" id="" cols="30" rows="10" placeholder="Consulta" class="validate[required]"></textarea>
+				</div>
+				<div class="b22-campos">
+					<p>* Todos los campos son obligatorios</p>
+				</div>
+				<div class="b22-btn btn-form">
+				 	<a href="" class="g-btn-1">Enviar<i class="icon-4"></i> </a>
+				</div>
+			</div>
+		</form>
+	</div>
+</section>
+
+
+{% endblock %}
+{% block jsfinal %}
+<script src="{{ STATIC_URL }}js/boxlight/boxlight.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="{{STATIC_URL}}js/validationform/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/validationform/jquery.validationEngine-es.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('.open-boxlight').boxlight();
+
+		$('.btn-form').click(function(e) {
+			e.preventDefault();
+
+			var validar = $(this).closest('form').validationEngine('validate');
+
+			if (!validar) {
+
+			}else{
+				alert('error')
+			}
+		});
+	});
+</script>
+{% endblock %}

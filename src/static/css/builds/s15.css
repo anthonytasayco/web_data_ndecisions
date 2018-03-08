@@ -1,0 +1,116 @@
+.cf {
+  zoom: 1;
+}
+.cf:after,
+.cf:before {
+  content: "";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+.b15 {
+  height: calc(100vh - 206px);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.b15 .wancho {
+  text-align: center;
+}
+.b15 .g0-btn .icon-flecha-btn {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.b15 .g0-btn .icon-flecha-btn:before {
+  top: -3px;
+}
+.b15-bloque h2 {
+  font-family: 'Conv_Lato-Bold', sans-serif;
+  font-size: 240px;
+  color: #ef7a12;
+  margin-bottom: 0;
+  padding-bottom: 12px;
+}
+.b15-bloque p {
+  margin-bottom: 0px;
+}
+.b15-bloque p:nth-of-type(1) {
+  max-width: 296px;
+  margin: 0px auto;
+  font-family: 'Conv_Lato-Regular', sans-serif;
+  font-size: 18px;
+  color: #4d4f53;
+  border-bottom: 1px solid #fbf0e5;
+  padding-bottom: 14px;
+  margin-bottom: 70px;
+}
+.b15-bloque p:nth-of-type(2) {
+  font-family: 'Conv_Lato-Regular', sans-serif;
+  font-size: 14px;
+  color: #404040;
+  padding-bottom: 39px;
+}
+.b15-link {
+  text-align: center;
+}
+.b15-link .g0-btn {
+  height: 50px;
+  width: 195px;
+  display: inline-block;
+}
+@media screen and (max-width: 1024px) {
+  .b15-bloque h2 {
+    font-size: 120px;
+  }
+}
+@media screen and (max-width: 960px) {
+  .b15-bloque h2 {
+    font-size: 110px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .b14-bloque h2 {
+    font-size: 90px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .b15-bloque p:nth-of-type(1) {
+    margin-bottom: 20px;
+  }
+  .b15-bloque p:nth-of-type(2) {
+    padding-bottom: 30px;
+  }
+  .b15-bloque h2 {
+    font-size: 80px;
+  }
+  .b15 {
+    height: auto;
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .b15-bloque h2 {
+    font-size: 70px;
+    margin-bottom: 10px;
+  }
+  .b15-bloque p:nth-of-type(2) {
+    padding-bottom: 20px;
+  }
+  .b15-bloque p:nth-of-type(1) {
+    font-size: 17px;
+  }
+}

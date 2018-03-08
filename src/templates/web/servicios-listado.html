@@ -1,0 +1,57 @@
+{% extends "common/_base.html" %}
+{% load static %}
+{% block cssadicional %}
+{% endblock %}
+
+{% block classbody %}{% endblock %}
+
+{% block content %}
+<!-- BANNER -->
+<div class="block-banner" style="background-image: url({{banner.fondo.url}});">
+	<div class="wancho"> 	
+		<h1>{{banner.titulo}}</h1>		
+	</div>
+</div>
+
+
+<!-- BLOQUE 2 -->
+<section class="b2 b2-servicios-listado">
+	{% if seccion.texto %}
+		<div class="wancho">
+			<div class="b6-texto">
+				{{seccion.texto|safe}}
+			</div>	
+		</div>
+		
+	{% endif %}
+	<div class="b2-wraper">
+		{% for row in servicios %}
+		<a href="{{row.get_absolute_url}}" class="b2-item-servicios">
+				<div class="g1-block">
+				   <figure class="g1-imgprincipal">
+					 <img src="{{row.icono.url}}" alt="" width="51" height="51">
+				   </figure>
+				 <figure class="g1-imghover">
+					 <img src="{{row.icono2.url}}" alt="" width="70" height="70">
+				   </figure>
+				 <h3>{{row.nombre}}</h3>
+				 <div class="g1-linkdetalle">
+				   <h6>Ver Detalle</h6>
+				 </div>
+				</div>
+			</a>
+		{% endfor %}
+	</div>
+	<div class="b2-row-button">
+		<div class="wancho">
+			<div class="g0-btn naranja">
+			 	<a href="{{seccion.enlace}}">{{seccion.boton}}<i class=" icon-flecha-btn"></i></a>
+		   </div>
+		</div>
+	</div>
+
+</section>
+{% endblock %}
+
+{% block jsfinal %}
+{% endblock %}

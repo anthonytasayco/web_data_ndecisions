@@ -1,0 +1,27 @@
+{% extends "common/_base.html" %}
+{% block cssadicional %}
+{% endblock %}
+{% block classbody %}{% endblock %}
+{% block content %}
+	<section class="b15">
+		<div class="wancho">
+	    	<div class="b15-bloque">
+				<h2>404</h2>
+				<p>
+					Parece que ha habido un error </br>
+ con la página que estabas buscando.
+				</p>
+				<p>
+					Estaremos encantados de darte una respuesta a la brevedad
+				</p>
+	    	</div>
+			<div class="b15-link">
+			   <div class="g0-btn naranja">
+			     <a href="{% url 'web:home' %}">Volver al home <i class=" icon-flecha-btn"></i></a>
+			   </div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+{% block jsfinal %}
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "common/_base.html" %}
+{% load static %}
+{% block cssadicional %}
+{% endblock %}
+
+{% block classbody %}{% endblock %}
+
+{% block content %}
+<!-- BANNER -->
+<div class="block-banner">
+	<div class="wancho"> 	
+		<h1>Nuestros servicios</h1>		
+	</div>
+</div>		
+
+
+<!-- BLOQUE 9 -->
+<section class="b9">
+	<div class="b9-wrapper">
+		<div class="wancho b7Miga">
+			<a href="{% url 'web:servicios' %}">Servicios</a>
+			<a href="{{servicio.get_absolute_url}}" class="active">{{servicio.nombre}}</a>
+		</div>
+
+		<div class="b9-wrap-contenedor">
+			<div class="wancho">
+				<div class="b9-medium">
+					<img src="{{servicio.icono.url}}" alt="" width="90" height="90">
+					<h3>{{servicio.nombre}}</h3>
+
+					{{servicio.texto|safe}}
+				</div>
+				
+				<figure class="b9-figure">
+					<div class="b9-imagen" style="background-image: url( {{servicio.imagen.url}});"></div>
+					<!-- <img src="{{ STATIC_URL }}media/960x400.png" alt="" width="960" height="400"> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- BLOQUE 10 -->
+<section class="b10">	
+ 	<div class="wancho">
+	 	<h3 class="g3-titulo">Conoce más servicios relacionados</h3> 				
+
+		<div class="b10-clientes">
+			<ul class="b10-bloques">
+				{% for row in relacionados %}
+					<li class="b10-cliente-item">
+						<a href="{{row.get_absolute_url}}">
+							<figure>
+								<img src="{{row.icono.url}}" width="70" height="70" />	
+								<figcaption>
+									{{row.nombre}}
+								</figcaption>				
+							</figure>
+							
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div> 		
+ 	</div>
+</section>
+{% endblock %}
+
+{% block jsfinal %}
+{% endblock %}

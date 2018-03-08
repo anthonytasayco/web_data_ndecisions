@@ -1,0 +1,106 @@
+.b3
+	font-size 0
+	background linear-gradient(to right, 
+								rgba(239,122,18,1) 0%,
+								rgba(239,122,18,1) 30%,
+								rgba(239,122,18,0.8) 50%, 
+								rgba(239,122,18,0.38) 100%)
+	.g0-btn
+		display flex
+		justify-content center
+		margin-top 50px
+		&.azul 
+			&:hover
+				background #002b56
+				i 
+					&:before
+						color #002b56
+.b3-wrapper-contenido
+	display flex
+	// align-items center
+	align-items flex-end
+	justify-content space-around
+	height 385px
+.b3-titu
+	color #fff
+	font-family t-3
+	position relative
+	// top -25px
+	top -100px
+	h3
+		margin 0
+		font-size 30px
+		text-transform uppercase
+	p
+		margin 0
+		font-size 18px
+		max-width 498px
+		padding-top 35px
+.b3-figure
+	position relative
+	// top -13px
+	top 0
+	img
+		max-width 100%
+		height auto
+		display block
+		// border 1px solid red
+		box-sizing border-box
+		
+@media screen and (max-width 768px)
+	.b3-medium
+		&:nth-of-type(1)
+			width 65%
+		&:nth-of-type(2)
+			width 45%
+			position absolute
+			right 0%
+			bottom 0
+	.b3-wrapper-contenido
+		position relative
+		justify-content flex-start
+	.b3-titu 
+		top -97px
+		p 
+			font-size 16px
+			padding-top 37px
+		h3 
+			font-size 25px
+	.b3 
+		.g0-btn 
+			margin-top 63px
+@media screen and (max-width 600px)
+	.b3-wrapper-contenido
+		display block
+		height auto
+	.b3-figure
+		top 0
+	.b3-titu
+		text-align center
+		top 0
+		p
+			max-width 100%
+			padding-bottom 25px
+			padding-top 15px
+	.b3
+		padding-top 30px
+		margin-bottom 0px
+		.g0-btn
+			margin auto
+	.b3-medium
+		&:nth-of-type(1)
+			width 100%
+			margin 0 auto
+		&:nth-of-type(2)
+			position relative
+			width 80%
+			margin 20px auto 0
+@media screen and (max-width 480px)
+	.b3 
+		padding-top 33px
+	.b3-titu
+		h3
+			font-size 20px
+		p
+			font-size 15px
+			padding-top 27px

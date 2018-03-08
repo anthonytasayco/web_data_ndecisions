@@ -1,0 +1,89 @@
+{% extends "../common/_base2.html" %}
+
+{% block cssadicional %}
+<link rel="stylesheet" href="{{STATIC_URL}}css/jquery.bxslider.css">
+{%endblock %}
+
+{% block classbody %}{% endblock %}
+
+{% block content %}
+
+<!-- BLOQUE 1 -->
+	<section class="b1 b1-slider-master">
+		<ul class="b1-slider">
+			<li class="b1-item" style="background-image: url('../../static/img/slider-home.jpg')">
+				<div class="b1-fondo"></div>
+				<div class="wancho b1-informacion-slider">
+					<div class="b1-content-slider-home">
+
+						<div class="b1-content-slider-home">
+							<h1>PACKING DE FRUTAS FRESCAS</h1>
+						</div>
+						<div class="b1-content-parrafo">
+							<p>Estructurado con columnas metálicas y vigas laminadas en secció H, con sistema de entrepiso tipo Steel Deck</p>
+						</div>
+						<a href="" class="g-btn-2">Leer más</a>
+					</div>
+
+				</div>
+			</li>
+			<li class="b1-item" style="background-image: url('../../static/img/slider-home.jpg')">
+				<div class="b1-fondo"></div>
+				<div class="wancho b1-informacion-slider">
+					<div class="b1-content-slider-home">
+
+						<div class="b1-content-slider-home">
+							<h1>PACKING DE FRUTAS MADURAS</h1>
+						</div>
+						<div class="b1-content-parrafo">
+							<p>Estructurado con columnas metálicas y vigas laminadas en secció H, con sistema de entrepiso tipo Steel Deck</p>
+						</div>
+						<a href="" class="g-btn-2">Leer más</a>
+					</div>
+
+				</div>
+			</li>
+			<li class="b1-item" style="background-image: url('../../static/img/slider-home.jpg')">
+				<div class="b1-fondo"></div>
+				<div class="wancho b1-informacion-slider">
+					<div class="b1-content-slider-home">
+
+						<div class="b1-content-slider-home">
+							<h1>PACKING DE FRUTAS FRESCAS</h1>
+						</div>
+						<div class="b1-content-parrafo">
+							<p>Estructurado con columnas metálicas y vigas laminadas en secció H, con sistema de entrepiso tipo Steel Deck</p>
+						</div>
+						<a href="" class="g-btn-2">Leer más</a>
+					</div>
+
+				</div>
+			</li>
+		</ul>
+		<div class="b1-flecha-ancla">
+			<div class="b1-icons">
+				<i class="icon-2"></i>
+			</div>
+			<div class="b1-icons">
+				<i class="icon-1"></i>
+			</div>
+		</div>
+	</section>
+
+
+
+
+{% endblock %}
+{% block jsfinal %}
+<script type="text/javascript" src="{{STATIC_URL}}js/jquery.bxslider.min.js"></script>
+
+<script type="text/javascript">
+	$('.b1-slider').bxSlider({
+			mode:'fade',
+			auto: false,
+			nextText:'',
+			prevText:'',
+			pager: true
+		});
+</script>
+{% endblock %}

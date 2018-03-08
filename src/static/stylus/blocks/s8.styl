@@ -1,0 +1,111 @@
+.b8
+	box-sizing border-box	
+	padding-bottom 69px
+	padding-top 50px
+	// background-color #363636
+	background: c-5
+	.g3-titulo
+		font-family t-3
+		font-size 18px
+		color #ec7f0e	
+		padding-bottom 80px
+		margin-bottom 0px
+.b8-texto
+	max-width 590px
+	margin 0 auto
+	font-family t-3
+	font-size 18px
+	color c-4
+	padding-bottom 37px
+	text-align center
+	p
+		margin-bottom 0
+.b8-bloques
+	font-size 0px
+	text-align center
+	position relative
+		
+.b8-cliente-item	
+	display inline-block
+	width 25%
+	
+	// overflow hidden
+	a		
+		position relative
+		display flex
+		// border-bottom 1px solid rgba(235,121,0,0.2)
+		height 112px
+		width 100%
+		align-items: center
+		position relative
+		&:after
+			content ""
+			height 92%
+			position absolute
+			right 0px
+			top 50%
+			transform translateY(-50%)
+			border-right 1px solid rgba(235,121,0,0.2)
+	figure
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		top 0
+		margin: auto;
+		img
+			display block
+			height auto
+			max-width 100%
+			@media screen and (min-width 1024px)
+				filter: grayscale(100%);
+				-webkit-filter: grayscale(100%)
+				transition: all 400ms ease;	
+	&:last-child
+		a
+			&:after
+				border-right 0px	
+	@media screen and (min-width 1024px)
+		&:hover
+			cursor pointer
+			img
+				filter: grayscale(0%);
+				transition: all 400ms ease;	
+				-webkit-filter: grayscale(0%)
+			figure
+				opacity 0.8	
+.b8-link
+	padding-top 50px
+	text-align center
+	.g0-btn
+		display inline-block
+			
+@media screen and (max-width 1024px)
+	.b8
+		padding-top 20px
+		padding-bottom 20px
+		.g3-titulo
+			padding-bottom 15px
+@media screen and (max-width 768px)
+	.b8 
+		padding-bottom 30px
+@media screen and (max-width 720px)
+	.b8-bloques
+		.b8-cliente-item
+			width 33.3333333333%
+			&:last-child
+				display none		
+			&:nth-of-type(3)
+				a
+					&:after
+						display none
+						
+@media screen and (max-width 420px)
+	.b8-bloques
+		.b8-cliente-item
+			width 50%
+			&:nth-last-child(2)
+				display none		
+			&:nth-of-type(2)
+				a
+					&:after
+						display none	

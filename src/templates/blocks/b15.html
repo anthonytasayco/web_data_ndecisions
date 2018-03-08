@@ -1,0 +1,226 @@
+{% extends "../common/_base2.html" %}
+
+{% block cssadicional %}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}js/boxlight/boxlight.css"/>
+<link rel="stylesheet" href="{{STATIC_URL}}js/validationform/validationEngine.jquery.css">
+{%endblock %}
+
+{% block classbody %}{% endblock %}
+
+{% block content %}
+
+<!-- BLOQUE 15 -->
+
+<section class="b15-bloque-proyecto">	
+		<div class="wancho b15-cabecera-proyecto">
+			<h2 class="g-general-title text-center">Servicios <span>que ofrecemos</span></h2>	
+			<div class="b15-parrafo-proyecto">
+				Steelser es una empresa especializada en construcciones metálicas  que brinda los siguientes servicios:
+			</div>
+		</div>
+
+		<div class="b15-lista-proyecto" >
+			<ul class="b15-content-bloque-list">
+			{% for row in "8"|get_range %}
+			 	<li class="b15-li-item">	
+
+			 			<div class="b15-envol-proyecto"> 	
+							<div class="b15-item-proyecto" style="background-image: url('../../static/img/b3-fondo-obras.jpg') ">
+								<div class="b15-item-block">
+									<img class="img-figura" src="../../static/img/hover.png" alt="">
+									<div class="row b15-info-link not-row">
+										<h4>
+											<i class="icon-6"></i>
+											<span class="b15-title-block">Gerencia de proyecto</span>
+										</h4>		
+										
+										<div class="block-general"> 
+									 		<span href="" class="g-btn-2 b15-btn">Ver servicio</span>	 			
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="b15-contenido-lista-proyecto">							
+						<section class="b16">
+							<div class="wancho">
+								<div class="b16-imagen">
+									<figuere >
+										<img src="{{STATIC_URL}}media/b14-imagen.jpg" alt="" width="498" height="326">
+									</figuere>
+
+								</div>
+
+								<div class="b16-inf">
+									<span class="b16-close close-general"></span>
+									<div class="b16-title">
+										<h3>Gerencia de Proyecto</h3>
+									</div>
+
+									<div class="b16-texto">
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ut dolore magna aliqua. Ut enim ad miut aliquip ex ea commodo cbeatae vitae dicta sunt explicabo.
+										Ut enim ad miut commodo cbeatae vitae dicta sunt explicabo.</p>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ut dolore magna aliqua. Ut enim ad miut aliquip ex ea commodo cbeatae vitae dicta sunt explicabo.
+										Ut enim ad miut commodo cbeatae vitae dicta sunt explicabo.</p>
+									</div>
+									<div class="b16-span">
+										<span>¿Te interesa este servicio?</span>
+									</div>
+									<div class="b16-btn">
+										<a href="#contenido1" class="open-boxlight">Contacta un asesor</a>
+									</div>
+								</div>
+							</div>
+						</section>		
+							
+						</div>
+					
+			 	</li>
+			{% endfor %}
+			
+			</ul>
+
+		      <div class="block-general b15-block-general padding-0 text-center"> 
+                <a href="" class="g-btn-1 b15-btn">Ver más <i class="icon-arrow-down b15-icons-down"></i> </a>             
+            </div>
+
+
+		</div>
+</section>
+<section class="b22 boxlight" id="contenido1">
+	<div class="wancho">
+		<form action="">
+			<div class="b22-title">
+				<h2 class="g-general-title">Contacta <span>un asesor</span></h2>
+			</div>
+			<div class="b22-texto">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ut dolore magna aliqua. Ex ea commodo cbeatae vitae dicta sunt explicabo.</p>
+			</div>
+			<div class="b22-form">
+				<div class="b22-input">
+					<input type="text" placeholder="Nombres  y Apellidos *" class="validate[required]">
+				</div>
+				<div class="b22-col-dos">
+					<div class="b22-inputdos">
+						<input type="text" placeholder="E - mail *" class="validate[required,custom[email]]">
+					</div>
+					<div class="b22-inputdos">
+						<input type="text" placeholder="Teléfono *" class="validate[required]">
+					</div>
+				</div>
+				<div class="b22-textarea">
+					<textarea name="" id="" cols="30" rows="10" placeholder="Consulta" class="validate[required]"></textarea>
+				</div>
+				<div class="b22-campos">
+					<p>* Todos los campos son obligatorios</p>
+				</div>
+				<div class="b22-btn btn-form">
+				 	<a href="" class="g-btn-1">Enviar<i class="icon-4"></i> </a>
+				</div>
+			</div>
+		</form>
+	</div>
+</section>
+{% endblock %}
+{% block jsfinal %}
+
+<script src="{{ STATIC_URL }}js/boxlight/boxlight.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="{{STATIC_URL}}js/validationform/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/validationform/jquery.validationEngine-es.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		$('.open-boxlight').boxlight();
+
+		$('.btn-form').click(function(e) {
+			e.preventDefault();
+
+			var validar = $(this).closest('form').validationEngine('validate');
+
+			if (!validar) {
+
+			}else{
+				alert('error')
+			}
+		});
+	});
+</script>
+
+<script type="text/javascript">
+$(function() {
+
+		//$('.b13-li-item').addClass('b13-position-relative');
+        $('.b15-item-proyecto').on("click", function(event) {
+       		event.preventDefault();
+       		//console.log('ff')
+       		//$('.b13-li-item').removeClass('b13-position-relative');
+       		$('.b15-li-item').removeClass('active').removeAttr('style');
+       		$('.b15-item-proyecto').removeClass('active');
+       		
+            $(this).addClass('active');
+            //$(".b13-li-item").find(".contenido-lista-proyecto").css("opacity","1"); 
+       		$(".b15-li-item").find(".b15-contenido-lista-proyecto").css("opacity","0").removeClass('active').removeAttr('style');
+
+
+            // alto item
+            if (!dispositivo_movil) {
+
+                var alto_item = $(this).closest('.b15-li-item').outerHeight(false);
+                $('.b15-li-item').height(alto_item);
+
+                var parent = $('.b15-li-item');
+                parent.removeClass('active');
+
+                parent = $(this).closest(parent).addClass('active');
+                $('.all').removeClass('active');
+                setTimeout(function() {
+                    $('html, body').animate({
+                        scrollTop: parent.offset().top
+                    }, 500);
+
+                }, 350)
+
+            }
+            // console.log(alto_item);
+       		var altoliproyecto1 =$(this).closest(".b15-li-item").outerHeight(true);
+       		var altoliproyecto2 =$(this).closest(".b15-li-item").find(".b15-contenido-lista-proyecto").outerHeight(true); 		
+       		
+
+          	boxPosition = $(this).position();
+            topFinal = boxPosition.top + altoliproyecto1;
+          
+
+            $(this).closest('.b15-li-item').find('.b15-contenido-lista-proyecto').stop().animate( { 'top': topFinal + 'px', "z-index": "1" , "opacity": "1" } ).addClass('active');
+              //alert(altoliproyecto);
+       		//$(this).closest(".b15-item-proyecto").css("height",altoliproyecto1+altoliproyecto2);
+          	//$(this).closest(".b13-li-item").find(".contenido-lista-proyecto").css( {"opacity":"1", "color", "red" } ).addClass('active');
+          	//$(this).closest(".b13-li-item").find(".contenido-lista-proyecto").css("opacity","1" );
+
+          	$(this).closest(".b15-li-item").stop().animate({ height: altoliproyecto1+altoliproyecto2, duration: "fast"});
+              
+
+
+        });
+
+    function closedetalles(){
+    	   //$('.b34-slide-item').height(alto_item_img);
+    	   //alert("hola");           
+           $('.b15-li-item').removeClass('active').removeAttr('style');
+           //$('.all').removeClass('active');
+           $('.b15-item-proyecto').removeClass('active');
+
+           $('.b15-li-item').find(".b15-contenido-lista-proyecto").css("opacity","0").removeClass('active').removeAttr('style');
+    }
+
+    $('.close-general').click(function(event) {
+        closedetalles();
+     });
+  
+  
+  });
+         
+</script>
+
+{% endblock %}

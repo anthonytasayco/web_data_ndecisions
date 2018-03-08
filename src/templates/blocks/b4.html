@@ -1,0 +1,111 @@
+{% extends "../common/_base2.html" %}
+
+{% block cssadicional %}
+<link rel="stylesheet" href="{{ STATIC_URL }}js/owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="{{STATIC_URL}}js/boxlight/boxlight.css">
+{%endblock %}
+
+{% block classbody %}{% endblock %}
+
+{% block content %}
+
+<!-- BLOQUE 4 -->
+<section class="b4">
+	<div class="b4-content-wrapper">
+		<div class="wancho">
+			<div class="b4-right">
+				<div class="b4-title">
+					 <h2 class="g-general-title">Proyectos <span>Exitosos</span></h2>
+					 <div class="b4-subtitule">
+						<h3>Confiaron en nosotros y nos cuentan sus experiencias.</h3>
+					 </div>
+				</div>
+				<div class="b4-slider-content ">
+					{% for row in "5"|get_range %}
+						<div class="b4-slider-items">
+							<div class="b4-content-imagen">
+								<img src="{{STATIC_URL}}media/b4-persona.png" width="96" height="96" alt="">
+							</div>
+							<div class="b4-content-texto">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ut dolore magna aliqua. Ut enim ad miut aliquip ex ea commodo cbeatae vitae dicta sunt explicabo.
+								Ut enim ad miut commodo cbeatae vitae dicta sunt explicabo.</p>
+								<h3>Juan Perez - Arquitecto</h3>
+							</div>
+						</div>
+					{% endfor %}
+
+
+				</div>
+				<div class="b4-btn-left">
+
+					<a href="" class="g-btn-1">Ver todos los proyectos <i class="icon-arrow-right"></i></a>
+
+				</div>
+			</div>
+
+		</div>
+		<div class="b4-left">
+			<div class="b4-imagen" style="background-image:url('{{STATIC_URL}}media/b4-imagen.png')">
+				<div class="b4-video">
+					<a href="https://www.youtube.com/watch?v=SwlQFK_1C8k" class="b4-video-play open-boxlight" data-type="video-youtube">
+						<i class="icon-10 b4-play"></i>
+
+					</a>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+
+
+
+{% endblock %}
+{% block jsfinal %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/owl-carousel/owl.carousel.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/boxlight.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.open-boxlight').boxlight();
+
+	})
+	var itemcarrusel = $('.b4-slider-items').length;
+
+		function carrusel() {
+			if (itemcarrusel >= 2 || $(window).width() <= 1100) {
+			$('.b4').removeClass('carrusel-desktop');
+			$('.b4-slider-content').addClass('owl-carousel');
+			$('.b4-slider-content').addClass('b4-owlcarousel');
+
+			$('.b4-owlcarousel').owlCarousel({
+				loop: false,
+				margin: 0,
+				autoplay: true,
+				autoplayTimeout: 3000,
+				nav: false,
+				responsive: {
+					0: {
+						items: 1
+					}
+				}
+
+			});
+		} else {
+			$('.b4-owlcarousel').trigger('destroy.owl.carousel');
+			$('.b4').addClass('carrusel-desktop');
+			$('.b4-slider-items').removeClass('owl-carousel');
+			$('.b4-carousel-left').removeClass('b5-owlcarousel');
+
+		}
+
+	};
+
+	carrusel();
+	$(window).resize(function(event) {
+		carrusel();
+	});
+
+</script>
+{% endblock %}

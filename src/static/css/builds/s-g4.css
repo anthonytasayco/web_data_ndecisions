@@ -1,0 +1,98 @@
+.cf {
+  zoom: 1;
+}
+.cf:after,
+.cf:before {
+  content: "";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+.block-banner {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  height: 132px;
+  background-image: url("../media/1080x132-1.png");
+  background-position-x: 100%;
+  z-index: 1;
+  background-repeat: no-repeat;
+}
+.block-banner:before {
+  content: "";
+  background-image: url("../img/1920x132 _filtro.png");
+  position: absolute;
+  background-repeat: no-repeat;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  height: 132px;
+}
+.block-banner h1 {
+  font-family: 'Conv_Lato-Black', sans-serif;
+  color: #fff;
+  font-size: 48px;
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  line-height: 100%;
+}
+.block-banner .wancho {
+  height: 132px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: left;
+  -moz-box-pack: left;
+  -o-box-pack: left;
+  -ms-flex-pack: left;
+  -webkit-justify-content: left;
+  justify-content: left;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+@media screen and (max-width: 1350px) {
+  .block-banner:before {
+    background-position-x: 60%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .block-banner h1 {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .block-banner:before {
+    background-position-x: 70%;
+  }
+  .block-banner h1 {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 490px) {
+  .block-banner {
+    height: 115px;
+  }
+  .block-banner:before {
+    height: 115px;
+  }
+  .block-banner .wancho {
+    height: 115px;
+  }
+  .block-banner h1 {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .block-banner h1 {
+    font-size: 28px;
+  }
+}
